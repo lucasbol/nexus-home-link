@@ -1,0 +1,16 @@
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SystemMonitoring\obj\Debug\net9.0\NexusHomeLink.Plugins.SystemMonitoring.GeneratedMSBuildEditorConfig.editorconfig
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SystemMonitoring\obj\Debug\net9.0\NexusHomeLink.Plugins.SystemMonitoring.AssemblyInfoInputs.cache
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SystemMonitoring\obj\Debug\net9.0\NexusHomeLink.Plugins.SystemMonitoring.AssemblyInfo.cs
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SystemMonitoring\obj\Debug\net9.0\NexusHomeLink.Plugins.SystemMonitoring.csproj.CoreCompileInputs.cache
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SystemMonitoring\obj\Debug\net9.0\NexusHomeLink.Plugins.SystemMonitoring.sourcelink.json
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SystemMonitoring\bin\Debug\net9.0\NexusHomeLink.Plugins.SystemMonitoring.deps.json
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SystemMonitoring\bin\Debug\net9.0\NexusHomeLink.Plugins.SystemMonitoring.dll
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SystemMonitoring\bin\Debug\net9.0\NexusHomeLink.Plugins.SystemMonitoring.pdb
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SystemMonitoring\bin\Debug\net9.0\NexusHomeLink.Plugins.Core.dll
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SystemMonitoring\bin\Debug\net9.0\NexusHomeLink.Plugins.Core.pdb
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SystemMonitoring\obj\Debug\net9.0\NexusHomeLink.Plugins.SystemMonitoring.csproj.AssemblyReference.cache
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SystemMonitoring\obj\Debug\net9.0\NexusHom.63DF6706.Up2Date
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SystemMonitoring\obj\Debug\net9.0\NexusHomeLink.Plugins.SystemMonitoring.dll
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SystemMonitoring\obj\Debug\net9.0\refint\NexusHomeLink.Plugins.SystemMonitoring.dll
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SystemMonitoring\obj\Debug\net9.0\NexusHomeLink.Plugins.SystemMonitoring.pdb
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SystemMonitoring\obj\Debug\net9.0\ref\NexusHomeLink.Plugins.SystemMonitoring.dll

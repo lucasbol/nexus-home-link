@@ -1,0 +1,385 @@
+{
+  "format": 1,
+  "restore": {
+    "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Api\\NexusHomeLink.Api.csproj": {}
+  },
+  "projects": {
+    "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Api\\NexusHomeLink.Api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Api\\NexusHomeLink.Api.csproj",
+        "projectName": "NexusHomeLink.Api",
+        "projectPath": "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Api\\NexusHomeLink.Api.csproj",
+        "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
+        "outputPath": "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Api\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.Core\\NexusHomeLink.Plugins.Core.csproj": {
+                "projectPath": "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.Core\\NexusHomeLink.Plugins.Core.csproj"
+              },
+              "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.Docker\\NexusHomeLink.Plugins.Docker.csproj": {
+                "projectPath": "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.Docker\\NexusHomeLink.Plugins.Docker.csproj"
+              },
+              "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.SmartHome\\NexusHomeLink.Plugins.SmartHome.csproj": {
+                "projectPath": "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.SmartHome\\NexusHomeLink.Plugins.SmartHome.csproj"
+              },
+              "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.SystemMonitoring\\NexusHomeLink.Plugins.SystemMonitoring.csproj": {
+                "projectPath": "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.SystemMonitoring\\NexusHomeLink.Plugins.SystemMonitoring.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.OpenApi": {
+              "target": "Package",
+              "version": "[9.0.2, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[9.0.4, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.Core\\NexusHomeLink.Plugins.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.Core\\NexusHomeLink.Plugins.Core.csproj",
+        "projectName": "NexusHomeLink.Plugins.Core",
+        "projectPath": "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.Core\\NexusHomeLink.Plugins.Core.csproj",
+        "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
+        "outputPath": "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "dependencies": {
+            "Microsoft.Extensions.Configuration.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
+            "Microsoft.Extensions.Configuration.Binder": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
+            "Microsoft.Extensions.Logging.Abstractions": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.Docker\\NexusHomeLink.Plugins.Docker.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.Docker\\NexusHomeLink.Plugins.Docker.csproj",
+        "projectName": "NexusHomeLink.Plugins.Docker",
+        "projectPath": "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.Docker\\NexusHomeLink.Plugins.Docker.csproj",
+        "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
+        "outputPath": "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.Docker\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.Core\\NexusHomeLink.Plugins.Core.csproj": {
+                "projectPath": "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.Core\\NexusHomeLink.Plugins.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.SmartHome\\NexusHomeLink.Plugins.SmartHome.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.SmartHome\\NexusHomeLink.Plugins.SmartHome.csproj",
+        "projectName": "NexusHomeLink.Plugins.SmartHome",
+        "projectPath": "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.SmartHome\\NexusHomeLink.Plugins.SmartHome.csproj",
+        "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
+        "outputPath": "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.SmartHome\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.Core\\NexusHomeLink.Plugins.Core.csproj": {
+                "projectPath": "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.Core\\NexusHomeLink.Plugins.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.SystemMonitoring\\NexusHomeLink.Plugins.SystemMonitoring.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.SystemMonitoring\\NexusHomeLink.Plugins.SystemMonitoring.csproj",
+        "projectName": "NexusHomeLink.Plugins.SystemMonitoring",
+        "projectPath": "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.SystemMonitoring\\NexusHomeLink.Plugins.SystemMonitoring.csproj",
+        "packagesPath": "C:\\Users\\Lucas\\.nuget\\packages\\",
+        "outputPath": "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.SystemMonitoring\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Lucas\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net9.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net9.0": {
+            "targetAlias": "net9.0",
+            "projectReferences": {
+              "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.Core\\NexusHomeLink.Plugins.Core.csproj": {
+                "projectPath": "F:\\homelab\\nexus-home-link\\backend\\src\\NexusHomeLink.Plugins.Core\\NexusHomeLink.Plugins.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.200"
+      },
+      "frameworks": {
+        "net9.0": {
+          "targetAlias": "net9.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.200/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

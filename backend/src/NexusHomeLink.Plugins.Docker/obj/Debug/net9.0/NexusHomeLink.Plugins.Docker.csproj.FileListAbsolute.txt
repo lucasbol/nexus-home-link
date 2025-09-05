@@ -1,0 +1,16 @@
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Docker\obj\Debug\net9.0\NexusHomeLink.Plugins.Docker.GeneratedMSBuildEditorConfig.editorconfig
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Docker\obj\Debug\net9.0\NexusHomeLink.Plugins.Docker.AssemblyInfoInputs.cache
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Docker\obj\Debug\net9.0\NexusHomeLink.Plugins.Docker.AssemblyInfo.cs
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Docker\obj\Debug\net9.0\NexusHomeLink.Plugins.Docker.csproj.CoreCompileInputs.cache
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Docker\obj\Debug\net9.0\NexusHomeLink.Plugins.Docker.sourcelink.json
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Docker\bin\Debug\net9.0\NexusHomeLink.Plugins.Docker.deps.json
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Docker\bin\Debug\net9.0\NexusHomeLink.Plugins.Docker.dll
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Docker\bin\Debug\net9.0\NexusHomeLink.Plugins.Docker.pdb
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Docker\bin\Debug\net9.0\NexusHomeLink.Plugins.Core.dll
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Docker\bin\Debug\net9.0\NexusHomeLink.Plugins.Core.pdb
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Docker\obj\Debug\net9.0\NexusHomeLink.Plugins.Docker.csproj.AssemblyReference.cache
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Docker\obj\Debug\net9.0\NexusHom.7583E9DD.Up2Date
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Docker\obj\Debug\net9.0\NexusHomeLink.Plugins.Docker.dll
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Docker\obj\Debug\net9.0\refint\NexusHomeLink.Plugins.Docker.dll
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Docker\obj\Debug\net9.0\NexusHomeLink.Plugins.Docker.pdb
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Docker\obj\Debug\net9.0\ref\NexusHomeLink.Plugins.Docker.dll

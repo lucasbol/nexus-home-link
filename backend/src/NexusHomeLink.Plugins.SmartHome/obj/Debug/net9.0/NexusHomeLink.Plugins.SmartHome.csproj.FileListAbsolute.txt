@@ -1,0 +1,16 @@
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SmartHome\obj\Debug\net9.0\NexusHomeLink.Plugins.SmartHome.GeneratedMSBuildEditorConfig.editorconfig
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SmartHome\obj\Debug\net9.0\NexusHomeLink.Plugins.SmartHome.AssemblyInfoInputs.cache
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SmartHome\obj\Debug\net9.0\NexusHomeLink.Plugins.SmartHome.AssemblyInfo.cs
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SmartHome\obj\Debug\net9.0\NexusHomeLink.Plugins.SmartHome.csproj.CoreCompileInputs.cache
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SmartHome\obj\Debug\net9.0\NexusHomeLink.Plugins.SmartHome.sourcelink.json
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SmartHome\bin\Debug\net9.0\NexusHomeLink.Plugins.SmartHome.deps.json
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SmartHome\bin\Debug\net9.0\NexusHomeLink.Plugins.SmartHome.dll
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SmartHome\bin\Debug\net9.0\NexusHomeLink.Plugins.SmartHome.pdb
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SmartHome\bin\Debug\net9.0\NexusHomeLink.Plugins.Core.dll
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SmartHome\bin\Debug\net9.0\NexusHomeLink.Plugins.Core.pdb
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SmartHome\obj\Debug\net9.0\NexusHomeLink.Plugins.SmartHome.csproj.AssemblyReference.cache
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SmartHome\obj\Debug\net9.0\NexusHom.FEE86070.Up2Date
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SmartHome\obj\Debug\net9.0\NexusHomeLink.Plugins.SmartHome.dll
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SmartHome\obj\Debug\net9.0\refint\NexusHomeLink.Plugins.SmartHome.dll
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SmartHome\obj\Debug\net9.0\NexusHomeLink.Plugins.SmartHome.pdb
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.SmartHome\obj\Debug\net9.0\ref\NexusHomeLink.Plugins.SmartHome.dll

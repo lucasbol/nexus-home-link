@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "zDxdkYx+MwutdCFwUOHttkZbOZAkwMAItZBaT4KI75o=",
+  "Source": "NexusHomeLink.Api",
+  "BasePath": "_content/NexusHomeLink.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

@@ -1,0 +1,13 @@
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Core\obj\Debug\net9.0\NexusHomeLink.Plugins.Core.GeneratedMSBuildEditorConfig.editorconfig
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Core\obj\Debug\net9.0\NexusHomeLink.Plugins.Core.AssemblyInfoInputs.cache
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Core\obj\Debug\net9.0\NexusHomeLink.Plugins.Core.AssemblyInfo.cs
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Core\obj\Debug\net9.0\NexusHomeLink.Plugins.Core.csproj.CoreCompileInputs.cache
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Core\obj\Debug\net9.0\NexusHomeLink.Plugins.Core.sourcelink.json
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Core\obj\Debug\net9.0\NexusHomeLink.Plugins.Core.csproj.AssemblyReference.cache
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Core\bin\Debug\net9.0\NexusHomeLink.Plugins.Core.deps.json
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Core\bin\Debug\net9.0\NexusHomeLink.Plugins.Core.dll
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Core\bin\Debug\net9.0\NexusHomeLink.Plugins.Core.pdb
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Core\obj\Debug\net9.0\NexusHomeLink.Plugins.Core.dll
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Core\obj\Debug\net9.0\refint\NexusHomeLink.Plugins.Core.dll
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Core\obj\Debug\net9.0\NexusHomeLink.Plugins.Core.pdb
+F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Plugins.Core\obj\Debug\net9.0\ref\NexusHomeLink.Plugins.Core.dll
