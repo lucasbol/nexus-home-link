@@ -363,19 +363,103 @@ POST /api/plugin/action             # Execute plugin action
 
 ## 🚀 Deployment
 
-### Docker Deployment
+### 🐳 Docker Deployment (Recommended for Homelabbers)
+
+The easiest way to deploy Nexus Home Link is using Docker Compose. This will set up the entire stack with one command.
+
+#### Quick Start
 
 ```bash
-# Build and run with Docker Compose
-cd backend
+# Clone the repository
+git clone https://github.com/lucasbol/nexus-home-link.git
+cd nexus-home-link
+
+# Run the deployment script (Linux/Mac)
+chmod +x deploy.sh
+./deploy.sh
+
+# Or run manually
+docker-compose up -d --build
+```
+
+#### Windows PowerShell
+
+```powershell
+# Clone the repository
+git clone https://github.com/lucasbol/nexus-home-link.git
+cd nexus-home-link
+
+# Run the deployment script
+.\deploy.ps1
+
+# Or run manually
+docker-compose up -d --build
+```
+
+#### What Gets Deployed
+
+- **Frontend**: Vue 3 dashboard (http://localhost:3000)
+- **Backend**: .NET API with plugin system (http://localhost:5000)
+- **Database**: SQL Server 2022 (localhost:1433)
+- **Cache**: Redis 7 (localhost:6379)
+- **Reverse Proxy**: Nginx (optional, port 80/443)
+
+#### Configuration
+
+1. **Copy environment file**:
+   ```bash
+   cp env.example .env
+   ```
+
+2. **Edit `.env`** with your settings:
+   ```env
+   # TMDB API (optional)
+   TMDB_API_KEY=your_api_key
+   TMDB_ACCESS_TOKEN=your_access_token
+   
+   # Database password
+   DB_PASSWORD=your_secure_password
+   
+   # Feature flags
+   ENABLE_MOCK_DATA=true
+   ```
+
+#### Docker Commands
+
+```bash
+# Start all services
 docker-compose up -d
 
-# This will start:
-# - Frontend (Vue 3)
-# - Backend API (.NET Core)
-# - Database (SQL Server)
-# - Cache (Redis)
+# View logs
+docker-compose logs -f
+
+# Stop all services
+docker-compose down
+
+# Update and restart
+docker-compose pull && docker-compose up -d
+
+# View service status
+docker-compose ps
+
+# Access specific service logs
+docker-compose logs -f frontend
+docker-compose logs -f backend
 ```
+
+#### Data Persistence
+
+- **Database**: Stored in `sqlserver_data` Docker volume
+- **Redis**: Stored in `redis_data` Docker volume
+- **Certificates**: Stored in `./certs/` directory
+
+#### Health Checks
+
+All services include health checks:
+- Frontend: `http://localhost:3000/health`
+- Backend: `http://localhost:5000/health`
+- Database: SQL connection test
+- Redis: `redis-cli ping`
 
 ### Production Build
 

@@ -1,0 +1,37 @@
+# Minimal Dockerfile - Just the .NET API with embedded frontend
+# No Nginx needed!
+
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
+WORKDIR /app
+EXPOSE 80
+
+# Install Node.js and pnpm
+RUN apt-get update && apt-get install -y curl && \
+    curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
+    apt-get install -y nodejs && \
+    npm install -g pnpm && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Copy frontend source
+COPY frontend/ /app/frontend/
+WORKDIR /app/frontend
+
+# Install frontend dependencies and build
+RUN pnpm install && pnpm build
+
+# Copy backend source
+COPY backend/src/ /app/backend/
+WORKDIR /app/backend
+
+# Copy built frontend to backend wwwroot
+RUN mkdir -p wwwroot && cp -r /app/frontend/dist/* wwwroot/
+
+# Expose port
+EXPOSE 80
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
+  CMD curl -f http://localhost/health || exit 1
+
+# Start the .NET API (it will serve both API and frontend)
+CMD ["dotnet", "NexusHomeLink.Api.dll"]

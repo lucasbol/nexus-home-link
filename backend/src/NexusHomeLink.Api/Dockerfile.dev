@@ -1,0 +1,23 @@
+# Development Dockerfile for .NET API
+FROM mcr.microsoft.com/dotnet/sdk:9.0
+
+WORKDIR /app
+
+# Copy project files
+COPY ["NexusHomeLink.Api/NexusHomeLink.Api.csproj", "NexusHomeLink.Api/"]
+COPY ["NexusHomeLink.Plugins.Core/NexusHomeLink.Plugins.Core.csproj", "NexusHomeLink.Plugins.Core/"]
+COPY ["NexusHomeLink.Plugins.SystemMonitoring/NexusHomeLink.Plugins.SystemMonitoring.csproj", "NexusHomeLink.Plugins.SystemMonitoring/"]
+COPY ["NexusHomeLink.Plugins.SmartHome/NexusHomeLink.Plugins.SmartHome.csproj", "NexusHomeLink.Plugins.SmartHome/"]
+COPY ["NexusHomeLink.Plugins.Docker/NexusHomeLink.Plugins.Docker.csproj", "NexusHomeLink.Plugins.Docker/"]
+
+# Restore dependencies
+RUN dotnet restore "NexusHomeLink.Api/NexusHomeLink.Api.csproj"
+
+# Copy source code
+COPY . .
+
+# Expose port
+EXPOSE 80
+
+# Start development server with hot reload
+CMD ["dotnet", "watch", "run", "--urls", "http://+:80", "--project", "NexusHomeLink.Api"]

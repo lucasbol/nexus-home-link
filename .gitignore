@@ -75,3 +75,15 @@ coverage/
 
 # Test results
 TestResults/
+
+# Docker
+.env
+certs/
+*.pem
+*.key
+*.crt
+*.pfx
+
+# Logs
+*.log
+logs/

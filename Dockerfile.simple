@@ -1,0 +1,45 @@
+# Simple single-container Dockerfile for Nexus Home Link
+# Frontend + Backend only (no database - uses mock data)
+
+FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS base
+WORKDIR /app
+EXPOSE 80
+
+# Install Node.js and pnpm
+RUN apt-get update && apt-get install -y curl && \
+    curl -fsSL https://deb.nodesource.com/setup_18.x | bash - && \
+    apt-get install -y nodejs && \
+    npm install -g pnpm && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Install nginx
+RUN apt-get update && apt-get install -y nginx && \
+    apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Copy frontend source
+COPY frontend/ /app/frontend/
+WORKDIR /app/frontend
+
+# Install frontend dependencies and build
+RUN pnpm install && pnpm build
+
+# Copy backend source
+COPY backend/src/ /app/backend/
+WORKDIR /app/backend
+
+# Copy nginx config
+COPY nginx-simple.conf /etc/nginx/sites-available/default
+
+# Copy startup script
+COPY start-simple.sh /app/start-simple.sh
+RUN chmod +x /app/start-simple.sh
+
+# Expose port
+EXPOSE 80
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
+  CMD curl -f http://localhost/health || exit 1
+
+# Start services
+CMD ["/app/start-simple.sh"]

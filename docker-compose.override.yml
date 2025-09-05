@@ -1,0 +1,36 @@
+# Development overrides for docker-compose.yml
+# This file is automatically loaded by docker-compose
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.dev
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    environment:
+      - VITE_API_BASE_URL=http://localhost:5000/api
+      - VITE_ENABLE_MOCK_DATA=true
+    ports:
+      - "3000:3000"
+    command: pnpm dev --host 0.0.0.0
+
+  backend:
+    build:
+      context: ./backend/src
+      dockerfile: NexusHomeLink.Api/Dockerfile.dev
+    volumes:
+      - ./backend/src:/app
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_URLS=http://+:80
+    ports:
+      - "5000:80"
+    command: dotnet watch run --urls http://+:80
+
+  # Disable nginx in development
+  nginx:
+    profiles:
+      - production

@@ -35,7 +35,15 @@ app.UseHttpsRedirection();
 app.UseCors("AllowFrontend");
 app.UseAuthorization();
 
+// Serve static files (frontend)
+app.UseDefaultFiles();
+app.UseStaticFiles();
+
+// API routes
 app.MapControllers();
+
+// Fallback to frontend for SPA routing
+app.MapFallbackToFile("index.html");
 
 // Initialize plugins
 var pluginManager = app.Services.GetRequiredService<PluginManager>();

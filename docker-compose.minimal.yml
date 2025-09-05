@@ -1,0 +1,42 @@
+# Minimal Docker Compose for Nexus Home Link
+# This version only includes frontend and backend (no database)
+# Perfect for testing or when you have external databases
+
+version: '3.8'
+
+services:
+  # Frontend - Vue 3 Dashboard
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: nexus-home-link-frontend
+    ports:
+      - "3000:80"
+    environment:
+      - VITE_API_BASE_URL=http://backend:80/api
+      - VITE_ENABLE_MOCK_DATA=true
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - nexus-network
+
+  # Backend - .NET API
+  backend:
+    build:
+      context: ./backend/src
+      dockerfile: NexusHomeLink.Api/Dockerfile
+    container_name: nexus-home-link-backend
+    ports:
+      - "5000:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - ASPNETCORE_URLS=http://+:80
+    restart: unless-stopped
+    networks:
+      - nexus-network
+
+networks:
+  nexus-network:
+    driver: bridge
