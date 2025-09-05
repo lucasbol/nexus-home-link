@@ -22,9 +22,6 @@ RUN pnpm install && pnpm build
 COPY backend/src/ /app/backend/
 WORKDIR /app/backend
 
-# Copy built frontend to backend wwwroot
-RUN mkdir -p wwwroot && cp -r /app/frontend/dist/* wwwroot/
-
 # Restore dependencies
 RUN dotnet restore "NexusHomeLink.Api/NexusHomeLink.Api.csproj"
 
@@ -34,12 +31,19 @@ RUN dotnet build "NexusHomeLink.Api/NexusHomeLink.Api.csproj" -c Release -o /app
 # Publish the application
 RUN dotnet publish "NexusHomeLink.Api/NexusHomeLink.Api.csproj" -c Release -o /app/publish /p:UseAppHost=false
 
+# Copy built frontend to published app wwwroot
+RUN mkdir -p /app/publish/wwwroot && cp -r /app/frontend/dist/* /app/publish/wwwroot/
+
 # Runtime stage
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 AS runtime
 WORKDIR /app
 
 # Copy published app
 COPY --from=build /app/publish .
+
+# Set environment variables
+ENV ASPNETCORE_URLS=http://+:80
+ENV ASPNETCORE_ENVIRONMENT=Production
 
 # Expose port
 EXPOSE 80
