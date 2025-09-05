@@ -189,27 +189,6 @@ class ApiService {
     return this.get('/test/plugins')
   }
 
-  // Docker container actions
-  async startContainer(containerId: string) {
-    return this.post(`/docker/containers/${containerId}/start`)
-  }
-
-  async stopContainer(containerId: string) {
-    return this.post(`/docker/containers/${containerId}/stop`)
-  }
-
-  async restartContainer(containerId: string) {
-    return this.post(`/docker/containers/${containerId}/restart`)
-  }
-
-  // Smart home device actions
-  async toggleDevice(deviceId: string, state: boolean) {
-    return this.post(`/smart-home/devices/${deviceId}/toggle`, { state })
-  }
-
-  async setDeviceBrightness(deviceId: string, brightness: number) {
-    return this.post(`/smart-home/devices/${deviceId}/brightness`, { brightness })
-  }
 
   async setDeviceColor(deviceId: string, color: string) {
     return this.post(`/smart-home/devices/${deviceId}/color`, { color })
