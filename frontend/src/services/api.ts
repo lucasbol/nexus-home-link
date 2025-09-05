@@ -7,8 +7,12 @@ class ApiService {
   private instance: AxiosInstance
 
   constructor() {
+    // Use relative URL in production, absolute URL in development
+    const baseURL = import.meta.env.VITE_API_BASE_URL || 
+      (import.meta.env.PROD ? '/api' : 'http://localhost:5000/api')
+    
     this.instance = axios.create({
-      baseURL: import.meta.env.VITE_API_BASE_URL || 'http://localhost:5000/api',
+      baseURL,
       timeout: config.api.timeout,
       headers: {
         'Content-Type': 'application/json'
