@@ -6,7 +6,7 @@
         <Skeleton class="h-6 w-48" />
         <Skeleton class="h-8 w-24" />
       </div>
-      
+
       <!-- Stats Grid Skeleton -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         <div v-for="i in 4" :key="i" class="space-y-2">
@@ -15,7 +15,7 @@
           <Skeleton class="h-2 w-full" />
         </div>
       </div>
-      
+
       <!-- Movies Section Skeleton -->
       <div class="space-y-3">
         <div class="flex items-center justify-between">
@@ -35,7 +35,7 @@
           </div>
         </div>
       </div>
-      
+
       <!-- TV Shows Section Skeleton -->
       <div class="space-y-3">
         <div class="flex items-center justify-between">
@@ -84,15 +84,21 @@
       <!-- Overall Stats -->
       <div class="grid grid-cols-3 gap-4">
         <div class="text-center p-4 bg-muted/50 rounded-lg">
-          <div class="text-2xl font-bold text-foreground">{{ stats.totalMovies.toLocaleString() }}</div>
+          <div class="text-2xl font-bold text-foreground">
+            {{ stats.totalMovies.toLocaleString() }}
+          </div>
           <div class="text-sm text-muted-foreground">Movies</div>
         </div>
         <div class="text-center p-4 bg-muted/50 rounded-lg">
-          <div class="text-2xl font-bold text-foreground">{{ stats.totalShows.toLocaleString() }}</div>
+          <div class="text-2xl font-bold text-foreground">
+            {{ stats.totalShows.toLocaleString() }}
+          </div>
           <div class="text-sm text-muted-foreground">TV Shows</div>
         </div>
         <div class="text-center p-4 bg-muted/50 rounded-lg">
-          <div class="text-2xl font-bold text-foreground">{{ stats.totalPhotos.toLocaleString() }}</div>
+          <div class="text-2xl font-bold text-foreground">
+            {{ stats.totalPhotos.toLocaleString() }}
+          </div>
           <div class="text-sm text-muted-foreground">Photos</div>
         </div>
       </div>
@@ -101,13 +107,18 @@
       <div class="space-y-3">
         <h4 class="text-sm font-medium text-foreground">Library Status</h4>
         <div class="space-y-2">
-          <div v-for="library in libraries" :key="library.id" class="flex items-center justify-between p-3 bg-muted/30 rounded-lg">
+          <div
+            v-for="library in libraries"
+            :key="library.id"
+            class="flex items-center justify-between p-3 bg-muted/30 rounded-lg"
+          >
             <div class="flex items-center gap-3">
               <component :is="getLibraryIcon(library.type)" class="w-5 h-5" />
               <div>
                 <div class="font-medium text-foreground">{{ library.name }}</div>
                 <div class="text-sm text-muted-foreground">
-                  {{ library.totalItems.toLocaleString() }} items • {{ formatBytes(library.totalSize) }}
+                  {{ library.totalItems.toLocaleString() }} items •
+                  {{ formatBytes(library.totalSize) }}
                 </div>
               </div>
             </div>
@@ -117,7 +128,9 @@
               </Badge>
               <div class="text-right">
                 <div class="text-sm font-medium text-foreground">{{ library.quality }}</div>
-                <div class="text-xs text-muted-foreground">{{ library.watchedPercentage }}% watched</div>
+                <div class="text-xs text-muted-foreground">
+                  {{ library.watchedPercentage }}% watched
+                </div>
               </div>
             </div>
           </div>
@@ -147,10 +160,10 @@
             </button>
           </div>
         </div>
-        <div 
+        <div
           ref="moviesCarousel"
           class="flex gap-3 overflow-x-auto scrollbar-hide pb-2"
-          style="scrollbar-width: none; -ms-overflow-style: none;"
+          style="scrollbar-width: none; -ms-overflow-style: none"
         >
           <a
             v-for="item in recentItems.filter(item => item.type === 'movie').slice(0, 20)"
@@ -160,14 +173,20 @@
             rel="noopener noreferrer"
             class="group relative overflow-hidden rounded-lg border border-border/30 hover:border-border/50 transition-all duration-200 hover:shadow-md flex-shrink-0 w-32 block cursor-pointer"
           >
-            <div class="aspect-[2/3] bg-gradient-to-br from-red-500/10 to-orange-500/10 flex items-center justify-center overflow-hidden relative">
-              <img 
-                :src="item.poster || 'https://via.placeholder.com/300x450/ef4444/ffffff?text=No+Poster'"
+            <div
+              class="aspect-[2/3] bg-gradient-to-br from-red-500/10 to-orange-500/10 flex items-center justify-center overflow-hidden relative"
+            >
+              <img
+                :src="
+                  item.poster || 'https://via.placeholder.com/300x450/ef4444/ffffff?text=No+Poster'
+                "
                 :alt="item.title"
                 class="w-full h-full object-cover"
                 @error="handleImageError"
               />
-              <div class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+              <div
+                class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+              >
                 <Play class="w-6 h-6 text-white" />
               </div>
             </div>
@@ -206,10 +225,10 @@
             </button>
           </div>
         </div>
-        <div 
+        <div
           ref="tvCarousel"
           class="flex gap-3 overflow-x-auto scrollbar-hide pb-2"
-          style="scrollbar-width: none; -ms-overflow-style: none;"
+          style="scrollbar-width: none; -ms-overflow-style: none"
         >
           <a
             v-for="item in recentItems.filter(item => item.type === 'tv').slice(0, 20)"
@@ -219,22 +238,26 @@
             rel="noopener noreferrer"
             class="group relative overflow-hidden rounded-lg border border-border/30 hover:border-border/50 transition-all duration-200 hover:shadow-md flex-shrink-0 w-32 block cursor-pointer"
           >
-            <div class="aspect-[2/3] bg-gradient-to-br from-blue-500/10 to-cyan-500/10 flex items-center justify-center overflow-hidden relative">
-              <img 
-                :src="item.poster || 'https://via.placeholder.com/300x450/3b82f6/ffffff?text=No+Poster'"
+            <div
+              class="aspect-[2/3] bg-gradient-to-br from-blue-500/10 to-cyan-500/10 flex items-center justify-center overflow-hidden relative"
+            >
+              <img
+                :src="
+                  item.poster || 'https://via.placeholder.com/300x450/3b82f6/ffffff?text=No+Poster'
+                "
                 :alt="item.title"
                 class="w-full h-full object-cover"
                 @error="handleImageError"
               />
-              <div class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+              <div
+                class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+              >
                 <Play class="w-6 h-6 text-white" />
               </div>
             </div>
             <div class="p-2 bg-muted/95 backdrop-blur-sm">
               <h5 class="text-xs font-medium text-foreground truncate">{{ item.title }}</h5>
-              <p class="text-xs text-muted-foreground">
-                S{{ item.season }}E{{ item.episode }}
-              </p>
+              <p class="text-xs text-muted-foreground">S{{ item.season }}E{{ item.episode }}</p>
               <div v-if="item.rating" class="flex items-center gap-1 mt-1">
                 <Star class="w-3 h-3 text-yellow-500 fill-current" />
                 <span class="text-xs text-muted-foreground">{{ item.rating.toFixed(1) }}</span>
@@ -256,14 +279,21 @@
             :key="item.id"
             class="group relative overflow-hidden rounded-lg border border-border/30 hover:border-border/50 transition-all duration-200 hover:shadow-md"
           >
-            <div class="aspect-square bg-gradient-to-br from-green-500/10 to-emerald-500/10 flex items-center justify-center overflow-hidden relative">
-              <img 
-                :src="item.thumbnail || 'https://via.placeholder.com/300x300/10b981/ffffff?text=No+Photo'"
+            <div
+              class="aspect-square bg-gradient-to-br from-green-500/10 to-emerald-500/10 flex items-center justify-center overflow-hidden relative"
+            >
+              <img
+                :src="
+                  item.thumbnail ||
+                  'https://via.placeholder.com/300x300/10b981/ffffff?text=No+Photo'
+                "
                 :alt="item.title"
                 class="w-full h-full object-cover"
                 @error="handleImageError"
               />
-              <div class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+              <div
+                class="absolute inset-0 bg-black/20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+              >
                 <Image class="w-6 h-6 text-white" />
               </div>
             </div>
@@ -280,8 +310,21 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import {
-  Film, Tv, Image, Play, Download, 
-  Clock, HardDrive, Users, Star, TrendingUp, Calendar, Loader2, AlertCircle, ChevronLeft, ChevronRight
+  Film,
+  Tv,
+  Image,
+  Play,
+  Download,
+  Clock,
+  HardDrive,
+  Users,
+  Star,
+  TrendingUp,
+  Calendar,
+  Loader2,
+  AlertCircle,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-vue-next'
 import Card from './ui/card.vue'
 import Badge from './ui/badge.vue'
@@ -341,19 +384,27 @@ const formatBytes = (bytes: number): string => {
 
 const getLibraryIcon = (type: string) => {
   switch (type) {
-    case 'movies': return Film
-    case 'tv': return Tv
-    case 'photos': return Image
-    default: return HardDrive
+    case 'movies':
+      return Film
+    case 'tv':
+      return Tv
+    case 'photos':
+      return Image
+    default:
+      return HardDrive
   }
 }
 
 const getStatusColor = (status: string) => {
   switch (status) {
-    case 'online': return 'text-green-500'
-    case 'offline': return 'text-red-500'
-    case 'syncing': return 'text-yellow-500'
-    default: return 'text-gray-500'
+    case 'online':
+      return 'text-green-500'
+    case 'offline':
+      return 'text-red-500'
+    case 'syncing':
+      return 'text-yellow-500'
+    default:
+      return 'text-gray-500'
   }
 }
 
@@ -370,24 +421,26 @@ const handleImageError = (e: Event) => {
 // Carousel scroll functions
 const scrollMovies = (direction: 'left' | 'right') => {
   if (!moviesCarousel.value) return
-  
+
   const scrollAmount = 200
-  const newPosition = direction === 'left' 
-    ? Math.max(0, movieScrollPosition.value - scrollAmount)
-    : movieScrollPosition.value + scrollAmount
-  
+  const newPosition =
+    direction === 'left'
+      ? Math.max(0, movieScrollPosition.value - scrollAmount)
+      : movieScrollPosition.value + scrollAmount
+
   moviesCarousel.value.scrollTo({ left: newPosition, behavior: 'smooth' })
   movieScrollPosition.value = newPosition
 }
 
 const scrollTV = (direction: 'left' | 'right') => {
   if (!tvCarousel.value) return
-  
+
   const scrollAmount = 200
-  const newPosition = direction === 'left' 
-    ? Math.max(0, tvScrollPosition.value - scrollAmount)
-    : tvScrollPosition.value + scrollAmount
-  
+  const newPosition =
+    direction === 'left'
+      ? Math.max(0, tvScrollPosition.value - scrollAmount)
+      : tvScrollPosition.value + scrollAmount
+
   tvCarousel.value.scrollTo({ left: newPosition, behavior: 'smooth' })
   tvScrollPosition.value = newPosition
 }
@@ -435,7 +488,7 @@ onMounted(() => {
 
   setTimeout(() => {
     libraries.value = mockLibraries
-    
+
     // Calculate stats from libraries
     const totalMovies = mockLibraries.find(lib => lib.type === 'movies')?.totalItems || 0
     const totalShows = mockLibraries.find(lib => lib.type === 'tv')?.totalItems || 0
@@ -443,7 +496,8 @@ onMounted(() => {
     const totalSize = mockLibraries.reduce((sum, lib) => sum + lib.totalSize, 0)
     const watchedMovies = Math.floor(totalMovies * 0.68)
     const watchedShows = Math.floor(totalShows * 0.45)
-    const averageRating = mockLibraries.reduce((sum, lib) => sum + lib.rating, 0) / mockLibraries.length
+    const averageRating =
+      mockLibraries.reduce((sum, lib) => sum + lib.rating, 0) / mockLibraries.length
 
     stats.value = {
       totalMovies,

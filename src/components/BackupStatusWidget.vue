@@ -8,9 +8,7 @@
           <h3 class="text-lg font-semibold text-foreground">Backup Status</h3>
         </div>
         <div class="flex items-center gap-2">
-          <Badge class="bg-green-500/20 text-green-500 border-green-500/30">
-            Healthy
-          </Badge>
+          <Badge class="bg-green-500/20 text-green-500 border-green-500/30">Healthy</Badge>
         </div>
       </div>
 
@@ -37,7 +35,9 @@
       <div class="space-y-3">
         <h4 class="text-sm font-medium text-foreground">Backup Jobs</h4>
         <div class="space-y-2">
-          <div class="flex items-center justify-between p-3 bg-muted/10 rounded-lg border border-border/30">
+          <div
+            class="flex items-center justify-between p-3 bg-muted/10 rounded-lg border border-border/30"
+          >
             <div class="flex items-center gap-3">
               <div class="p-2 rounded-md bg-green-500/20 text-green-500">
                 <CheckCircle class="w-4 h-4" />
@@ -52,8 +52,10 @@
               <p class="text-sm font-medium text-foreground">45.2 GB</p>
             </div>
           </div>
-          
-          <div class="flex items-center justify-between p-3 bg-muted/10 rounded-lg border border-border/30">
+
+          <div
+            class="flex items-center justify-between p-3 bg-muted/10 rounded-lg border border-border/30"
+          >
             <div class="flex items-center gap-3">
               <div class="p-2 rounded-md bg-green-500/20 text-green-500">
                 <CheckCircle class="w-4 h-4" />
@@ -68,8 +70,10 @@
               <p class="text-sm font-medium text-foreground">2.1 GB</p>
             </div>
           </div>
-          
-          <div class="flex items-center justify-between p-3 bg-muted/10 rounded-lg border border-border/30">
+
+          <div
+            class="flex items-center justify-between p-3 bg-muted/10 rounded-lg border border-border/30"
+          >
             <div class="flex items-center gap-3">
               <div class="p-2 rounded-md bg-yellow-500/20 text-yellow-500">
                 <AlertTriangle class="w-4 h-4" />

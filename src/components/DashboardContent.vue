@@ -14,7 +14,7 @@
             <div class="flex items-center gap-1">
               <!-- Theme Dropdown -->
               <ThemeDropdown />
-              
+
               <button
                 @click="$emit('open-settings')"
                 class="p-2 rounded-lg bg-muted hover:bg-muted/80 transition-colors"
@@ -31,7 +31,7 @@
               </button>
             </div>
           </div>
-          
+
           <!-- Mobile Network Pills -->
           <div class="flex flex-wrap gap-1.5">
             <NetworkStatus />
@@ -46,12 +46,12 @@
             <div class="flex flex-wrap gap-1.5 sm:gap-2 min-w-0">
               <NetworkStatus />
             </div>
-            
+
             <!-- Right Controls - Positioned at top right -->
             <div class="flex items-center gap-1 flex-shrink-0">
               <!-- Theme Dropdown -->
               <ThemeDropdown />
-              
+
               <!-- Settings Button -->
               <button
                 @click="$emit('open-settings')"
@@ -60,7 +60,7 @@
               >
                 <Settings class="w-4 h-4" />
               </button>
-              
+
               <button
                 @click="$emit('refresh')"
                 class="p-2 rounded-lg bg-muted hover:bg-muted/80 transition-colors"
@@ -70,7 +70,7 @@
               </button>
             </div>
           </div>
-          
+
           <!-- Desktop Bottom Row - Weather Pill -->
           <div class="flex items-center justify-start gap-3">
             <div class="flex-shrink-0">
@@ -83,10 +83,12 @@
 
     <!-- Content Area -->
     <div class="px-6 lg:px-8 pt-2 pb-6 lg:pb-8">
-      <div :class="[
-        'transition-all duration-300 ease-in-out',
-        isTransitioning ? 'opacity-50' : 'opacity-100'
-      ]">
+      <div
+        :class="[
+          'transition-all duration-300 ease-in-out',
+          isTransitioning ? 'opacity-50' : 'opacity-100'
+        ]"
+      >
         <!-- Monitoring Tab Content -->
         <div v-if="activeTab === 'monitoring'" class="min-h-[600px]">
           <h2 class="text-2xl font-semibold text-foreground mb-6">System Monitoring</h2>
@@ -155,12 +157,15 @@ const props = defineProps<{
 const isTransitioning = ref(false)
 
 // Handle tab changes with transition
-watch(() => props.activeTab, () => {
-  isTransitioning.value = true
-  setTimeout(() => {
-    isTransitioning.value = false
-  }, 150)
-})
+watch(
+  () => props.activeTab,
+  () => {
+    isTransitioning.value = true
+    setTimeout(() => {
+      isTransitioning.value = false
+    }, 150)
+  }
+)
 
 defineEmits<{
   refresh: []

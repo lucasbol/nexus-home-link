@@ -20,13 +20,17 @@
         <div class="text-center p-3 bg-muted/20 rounded-lg">
           <Cpu class="w-4 h-4 text-primary mx-auto mb-1" />
           <p class="text-xs text-muted-foreground">CPU Usage</p>
-          <p class="text-lg font-semibold text-foreground">{{ totalStats.totalCpuUsage.toFixed(1) }}%</p>
+          <p class="text-lg font-semibold text-foreground">
+            {{ totalStats.totalCpuUsage.toFixed(1) }}%
+          </p>
         </div>
         <div class="text-center p-3 bg-muted/20 rounded-lg">
           <MemoryStick class="w-4 h-4 text-primary mx-auto mb-1" />
           <p class="text-xs text-muted-foreground">Memory</p>
           <p class="text-lg font-semibold text-foreground">
-            {{ formatBytes(totalStats.totalMemoryUsage) }}/{{ formatBytes(totalStats.totalMemoryLimit) }}
+            {{ formatBytes(totalStats.totalMemoryUsage) }}/{{
+              formatBytes(totalStats.totalMemoryLimit)
+            }}
           </p>
         </div>
         <div class="text-center p-3 bg-muted/20 rounded-lg">
@@ -45,13 +49,16 @@
           class="flex items-center justify-between p-3 bg-muted/10 rounded-lg border border-border/30 hover:bg-muted/20 transition-colors"
         >
           <div class="flex items-center gap-3">
-            <component :is="getStatusIcon(container.status)" :class="getStatusIconClass(container.status)" />
+            <component
+              :is="getStatusIcon(container.status)"
+              :class="getStatusIconClass(container.status)"
+            />
             <div>
               <p class="text-sm font-medium text-foreground">{{ container.name }}</p>
               <p class="text-xs text-muted-foreground">{{ container.image }}</p>
             </div>
           </div>
-          
+
           <div class="flex items-center gap-4">
             <div class="text-right">
               <p class="text-xs text-muted-foreground">CPU</p>
@@ -91,8 +98,8 @@
             {{ ((totalStats.totalMemoryUsage / totalStats.totalMemoryLimit) * 100).toFixed(1) }}%
           </span>
         </div>
-        <Progress 
-          :value="(totalStats.totalMemoryUsage / totalStats.totalMemoryLimit) * 100" 
+        <Progress
+          :value="(totalStats.totalMemoryUsage / totalStats.totalMemoryLimit) * 100"
           class="h-2"
         />
       </div>
@@ -103,8 +110,17 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import {
-  Container, Activity, Cpu, HardDrive, MemoryStick, 
-  Play, Pause, RotateCcw, AlertTriangle, CheckCircle, ExternalLink
+  Container,
+  Activity,
+  Cpu,
+  HardDrive,
+  MemoryStick,
+  Play,
+  Pause,
+  RotateCcw,
+  AlertTriangle,
+  CheckCircle,
+  ExternalLink
 } from 'lucide-vue-next'
 import Card from './ui/card.vue'
 import Badge from './ui/badge.vue'
@@ -135,31 +151,46 @@ const totalStats = ref({
 
 const getStatusIcon = (status: string) => {
   switch (status) {
-    case 'running': return Play
-    case 'stopped': return Pause
-    case 'paused': return Pause
-    case 'restarting': return RotateCcw
-    default: return AlertTriangle
+    case 'running':
+      return Play
+    case 'stopped':
+      return Pause
+    case 'paused':
+      return Pause
+    case 'restarting':
+      return RotateCcw
+    default:
+      return AlertTriangle
   }
 }
 
 const getStatusIconClass = (status: string) => {
   switch (status) {
-    case 'running': return 'w-3 h-3 text-green-500'
-    case 'stopped': return 'w-3 h-3 text-red-500'
-    case 'paused': return 'w-3 h-3 text-yellow-500'
-    case 'restarting': return 'w-3 h-3 text-blue-500'
-    default: return 'w-3 h-3 text-gray-500'
+    case 'running':
+      return 'w-3 h-3 text-green-500'
+    case 'stopped':
+      return 'w-3 h-3 text-red-500'
+    case 'paused':
+      return 'w-3 h-3 text-yellow-500'
+    case 'restarting':
+      return 'w-3 h-3 text-blue-500'
+    default:
+      return 'w-3 h-3 text-gray-500'
   }
 }
 
 const getStatusColor = (status: string) => {
   switch (status) {
-    case 'running': return 'bg-green-500/20 text-green-500 border-green-500/30'
-    case 'stopped': return 'bg-red-500/20 text-red-500 border-red-500/30'
-    case 'paused': return 'bg-yellow-500/20 text-yellow-500 border-yellow-500/30'
-    case 'restarting': return 'bg-blue-500/20 text-blue-500 border-blue-500/30'
-    default: return 'bg-gray-500/20 text-gray-500 border-gray-500/30'
+    case 'running':
+      return 'bg-green-500/20 text-green-500 border-green-500/30'
+    case 'stopped':
+      return 'bg-red-500/20 text-red-500 border-red-500/30'
+    case 'paused':
+      return 'bg-yellow-500/20 text-yellow-500 border-yellow-500/30'
+    case 'restarting':
+      return 'bg-blue-500/20 text-blue-500 border-blue-500/30'
+    default:
+      return 'bg-gray-500/20 text-gray-500 border-gray-500/30'
   }
 }
 
@@ -260,12 +291,12 @@ onMounted(() => {
 
   setTimeout(() => {
     containers.value = mockContainers
-    
+
     const running = mockContainers.filter(c => c.status === 'running')
     const totalCpu = running.reduce((sum, c) => sum + c.cpuUsage, 0)
     const totalMemory = running.reduce((sum, c) => sum + c.memoryUsage, 0)
     const totalMemoryLimit = running.reduce((sum, c) => sum + c.memoryLimit, 0)
-    
+
     totalStats.value = {
       totalContainers: mockContainers.length,
       runningContainers: running.length,

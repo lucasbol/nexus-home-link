@@ -8,12 +8,7 @@
           <h3 class="text-lg font-semibold text-foreground">Network Topology</h3>
         </div>
         <div class="flex items-center gap-2">
-          <Button
-            variant="ghost"
-            size="sm"
-            @click="showDetails = !showDetails"
-            class="h-8"
-          >
+          <Button variant="ghost" size="sm" @click="showDetails = !showDetails" class="h-8">
             <component :is="showDetails ? EyeOff : Eye" class="w-4 h-4" />
           </Button>
           <Button variant="ghost" size="sm" class="h-8">
@@ -69,27 +64,24 @@
             </Badge>
           </div>
         </div>
-        
+
         <!-- VLAN Legend -->
         <div class="flex flex-wrap gap-2 text-xs">
           <span class="text-muted-foreground">VLANs:</span>
-          <div
-            v-for="vlan in uniqueVlans"
-            :key="vlan"
-            class="flex items-center gap-1"
-          >
-            <div 
-              class="w-3 h-3 rounded-full" 
-              :style="{ backgroundColor: getVlanColor(vlan) }"
-            />
+          <div v-for="vlan in uniqueVlans" :key="vlan" class="flex items-center gap-1">
+            <div class="w-3 h-3 rounded-full" :style="{ backgroundColor: getVlanColor(vlan) }" />
             <span class="text-muted-foreground">VLAN {{ vlan }}</span>
           </div>
         </div>
-        
-        <div class="relative h-80 bg-gradient-to-br from-muted/10 to-muted/5 rounded-lg border border-border/30 overflow-hidden">
+
+        <div
+          class="relative h-80 bg-gradient-to-br from-muted/10 to-muted/5 rounded-lg border border-border/30 overflow-hidden"
+        >
           <div v-if="isLoading" class="flex items-center justify-center h-full">
             <div class="text-center">
-              <div class="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-2"></div>
+              <div
+                class="w-8 h-8 border-4 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-2"
+              ></div>
               <p class="text-sm text-muted-foreground">Loading network topology...</p>
             </div>
           </div>
@@ -132,26 +124,25 @@
                 <p class="text-xs text-muted-foreground">{{ node.ip }} • {{ node.layer }}</p>
               </div>
             </div>
-            
+
             <div class="flex items-center gap-3">
               <div v-if="node.signal" class="text-right">
                 <p class="text-xs text-muted-foreground">Signal</p>
-                <p class="text-sm font-medium text-foreground">
-                  {{ node.signal }}%
-                </p>
+                <p class="text-sm font-medium text-foreground">{{ node.signal }}%</p>
               </div>
               <div class="text-right">
                 <p class="text-xs text-muted-foreground">Bandwidth</p>
-                <p class="text-sm font-medium text-foreground">
-                  {{ node.bandwidth }}Mbps
-                </p>
+                <p class="text-sm font-medium text-foreground">{{ node.bandwidth }}Mbps</p>
               </div>
               <div class="flex items-center gap-1">
                 <component :is="getSecurityIcon(node.security)" class="w-3 h-3" />
               </div>
-              <Badge :class="`${
-                node.status === 'online' ? 'text-green-500' : 'text-red-500'
-              } border-current`" variant="outline">
+              <Badge
+                :class="`${
+                  node.status === 'online' ? 'text-green-500' : 'text-red-500'
+                } border-current`"
+                variant="outline"
+              >
                 {{ node.status }}
               </Badge>
             </div>
@@ -166,11 +157,30 @@
 import { ref, onMounted, computed } from 'vue'
 import ForceGraph from './ForceGraph.vue'
 import {
-  Router, Wifi, Server, Monitor, Smartphone, 
-  Laptop, Gamepad2, Camera, Printer, HardDrive,
-  Activity, Shield, AlertTriangle, RefreshCw, 
-  Zap, Globe, Database, Cpu, HardDrive as HDD,
-  Eye, EyeOff, Layers, Network, Settings
+  Router,
+  Wifi,
+  Server,
+  Monitor,
+  Smartphone,
+  Laptop,
+  Gamepad2,
+  Camera,
+  Printer,
+  HardDrive,
+  Activity,
+  Shield,
+  AlertTriangle,
+  RefreshCw,
+  Zap,
+  Globe,
+  Database,
+  Cpu,
+  HardDrive as HDD,
+  Eye,
+  EyeOff,
+  Layers,
+  Network,
+  Settings
 } from 'lucide-vue-next'
 import Card from './ui/card.vue'
 import Badge from './ui/badge.vue'
@@ -179,7 +189,19 @@ import Button from './ui/button.vue'
 interface NetworkNode {
   id: string
   name: string
-  type: 'router' | 'server' | 'desktop' | 'laptop' | 'phone' | 'tablet' | 'gaming' | 'camera' | 'printer' | 'nas' | 'switch' | 'access_point'
+  type:
+    | 'router'
+    | 'server'
+    | 'desktop'
+    | 'laptop'
+    | 'phone'
+    | 'tablet'
+    | 'gaming'
+    | 'camera'
+    | 'printer'
+    | 'nas'
+    | 'switch'
+    | 'access_point'
   ip: string
   mac: string
   status: 'online' | 'offline' | 'unknown'
@@ -213,7 +235,7 @@ const networkHealth = ref({
 const selectedNode = ref<NetworkNode | null>(null)
 const showDetails = ref(false)
 const isLoading = ref(true)
-const graphData = ref<{ nodes: NetworkNode[], links: NetworkLink[] }>({ nodes: [], links: [] })
+const graphData = ref<{ nodes: NetworkNode[]; links: NetworkLink[] }>({ nodes: [], links: [] })
 
 const uniqueVlans = computed(() => {
   return Array.from(new Set(nodes.value.map(n => n.vlan).filter(Boolean)))
@@ -221,29 +243,46 @@ const uniqueVlans = computed(() => {
 
 const getVlanColor = (vlan?: number) => {
   if (!vlan) return '#6b7280'
-  const colors = ['#3b82f6', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#06b6d4', '#84cc16', '#f97316']
+  const colors = [
+    '#3b82f6',
+    '#8b5cf6',
+    '#f59e0b',
+    '#10b981',
+    '#ef4444',
+    '#06b6d4',
+    '#84cc16',
+    '#f97316'
+  ]
   return colors[vlan % colors.length]
 }
 
 const getLayerColor = (layer: string) => {
   switch (layer) {
-    case 'core': return 'bg-blue-500/20 border-blue-500/50 text-blue-500'
-    case 'distribution': return 'bg-purple-500/20 border-purple-500/50 text-purple-500'
-    case 'access': return 'bg-orange-500/20 border-orange-500/50 text-orange-500'
-    case 'endpoint': return 'bg-green-500/20 border-green-500/50 text-green-500'
-    default: return 'bg-gray-500/20 border-gray-500/50 text-gray-500'
+    case 'core':
+      return 'bg-blue-500/20 border-blue-500/50 text-blue-500'
+    case 'distribution':
+      return 'bg-purple-500/20 border-purple-500/50 text-purple-500'
+    case 'access':
+      return 'bg-orange-500/20 border-orange-500/50 text-orange-500'
+    case 'endpoint':
+      return 'bg-green-500/20 border-green-500/50 text-green-500'
+    default:
+      return 'bg-gray-500/20 border-gray-500/50 text-gray-500'
   }
 }
 
 const getSecurityIcon = (security: string) => {
   switch (security) {
-    case 'secure': return Shield
-    case 'warning': return AlertTriangle
-    case 'insecure': return AlertTriangle
-    default: return Shield
+    case 'secure':
+      return Shield
+    case 'warning':
+      return AlertTriangle
+    case 'insecure':
+      return AlertTriangle
+    default:
+      return Shield
   }
 }
-
 
 const handleNodeClick = (node: NetworkNode) => {
   selectedNode.value = node
@@ -259,7 +298,7 @@ const handleNodeHover = (node: NetworkNode | null) => {
         connectedNodes.add(link.target)
       }
     })
-    
+
     // Update node colors based on selection
     nodes.value.forEach(n => {
       n.__highlighted = connectedNodes.has(n.id)
@@ -494,15 +533,14 @@ onMounted(() => {
     links.value = mockLinks
     graphData.value = { nodes: mockNodes, links: mockLinks }
     isLoading.value = false
-    
+
     const online = mockNodes.filter(d => d.status === 'online')
-    const avgSignal = online
-      .filter(d => d.signal)
-      .reduce((sum, d) => sum + (d.signal || 0), 0) / 
+    const avgSignal =
+      online.filter(d => d.signal).reduce((sum, d) => sum + (d.signal || 0), 0) /
       online.filter(d => d.signal).length
     const securityIssues = mockNodes.filter(d => d.security !== 'secure').length
     const totalBandwidth = online.reduce((sum, d) => sum + (d.bandwidth || 0), 0)
-    
+
     networkHealth.value = {
       totalDevices: mockNodes.length,
       onlineDevices: online.length,

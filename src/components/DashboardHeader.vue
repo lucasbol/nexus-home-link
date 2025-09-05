@@ -1,40 +1,23 @@
-<template>
+1<template>
   <header class="bg-card/80 backdrop-blur-sm border-b border-border p-4">
     <div class="flex items-center justify-between">
       <!-- Network Status Pills -->
       <div class="flex flex-wrap gap-1.5 sm:gap-2 min-w-0">
-        <div 
+        <NetworkStatusPill 
           v-for="status in networkStatuses"
           :key="status.id"
-          class="flex items-center gap-1.5 px-2 py-1.5 rounded-full text-xs font-medium bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400"
-        >
-          <div class="w-2 h-2 rounded-full bg-green-500" />
-          <span class="hidden sm:inline">{{ status.label }}</span>
-          <span class="font-mono">{{ status.value }}</span>
-        </div>
+          :status="status"
+          class="flex-shrink-0"
+        />
       </div>
 
-      <!-- Right Side Controls - Moved to top right -->
-      <div class="flex items-center gap-2">
+      <!-- Right Side Controls -->
+      <div class="flex items-center gap-3">
         <!-- Weather Pill -->
-        <div class="hidden sm:flex items-center gap-1 px-2 py-1.5 rounded-full bg-muted text-sm">
-          <Sun class="h-4 w-4 text-yellow-500" />
-          <span class="font-medium">22°C</span>
-          <span class="hidden sm:inline text-muted-foreground">Sunny</span>
-        </div>
+        <WeatherPill class="hidden sm:flex" />
 
-        <!-- Theme Dropdown -->
-        <ThemeDropdown />
-
-        <!-- Settings Button -->
-        <button
-          @click="openSettings"
-          class="flex items-center gap-2 px-3 py-2 rounded-lg bg-muted hover:bg-muted/80 transition-colors"
-          title="Settings"
-        >
-          <Settings class="h-4 w-4" />
-          <span class="hidden sm:inline text-sm font-medium">Settings</span>
-        </button>
+        <!-- Theme Toggle (Desktop) -->
+        <ThemeToggle class="hidden md:block" />
 
         <!-- Refresh Button -->
         <button
@@ -51,8 +34,10 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { RefreshCw, Sun, Settings } from 'lucide-vue-next'
-import ThemeDropdown from './ThemeDropdown.vue'
+import { RefreshCw } from 'lucide-vue-next'
+import NetworkStatusPill from './NetworkStatusPill.vue'
+import WeatherPill from './WeatherPill.vue'
+import ThemeToggle from './ThemeToggle.vue'
 
 interface NetworkStatus {
   id: string
@@ -68,16 +53,8 @@ const networkStatuses = ref<NetworkStatus[]>([
   { id: 'uptime', label: 'Uptime', status: 'online', value: '99.9%' }
 ])
 
-const refreshDashboard = () => {
+function refreshDashboard() {
+  // Emit refresh event or call refresh function
   console.log('Refreshing dashboard...')
 }
-
-const openSettings = () => {
-  // Emit event to parent to switch to settings tab
-  emit('open-settings')
-}
-
-const emit = defineEmits<{
-  'open-settings': []
-}>()
 </script>

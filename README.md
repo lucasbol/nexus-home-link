@@ -5,47 +5,55 @@ A modern, responsive homelab dashboard built with Vue 3, TypeScript, and Tailwin
 ## ✨ Features
 
 ### 🏠 **Overview Dashboard**
+
 - System status at a glance with network status pills
 - Weather information with real-time updates
 - Quick access to all major services
 
 ### 📊 **System Monitoring**
+
 - Real-time CPU, memory, and disk usage graphs
 - Temperature monitoring with visual indicators
 - Process monitoring and system load averages
 - Interactive charts powered by Chart.js
 
 ### 🌐 **Network Topology**
+
 - Interactive network visualization using D3.js force graphs
 - Device discovery with IP addresses and VLAN information
 - Clickable network nodes with detailed information
 - Real-time network status updates
 
 ### 🏡 **Smart Home Integration**
+
 - Room-specific smart home controls
 - Home Assistant integration
 - Automation logs and status monitoring
 - Device state management
 
 ### 🎬 **Media & Storage**
+
 - TMDB API integration for movie and TV show data
 - Recently added content with poster carousels
 - Clickable posters linking to TMDB pages
 - Storage usage monitoring and statistics
 
 ### 🐳 **Docker Management**
+
 - Container status monitoring
 - Start/stop/restart container controls
 - Resource usage tracking
 - Container health indicators
 
 ### 🔒 **Security & Backup**
+
 - Security alerts and threat monitoring
 - Backup status tracking
 - System security recommendations
 - Alert management and notifications
 
 ### ⚙️ **Settings & Configuration**
+
 - Theme management (Light/Dark/System)
 - Network configuration
 - Security settings
@@ -68,7 +76,7 @@ A modern, responsive homelab dashboard built with Vue 3, TypeScript, and Tailwin
 
 ### Prerequisites
 
-- **Node.js 18+** 
+- **Node.js 18+**
 - **pnpm** (recommended) or npm
 
 ### Installation
@@ -171,11 +179,13 @@ VITE_API_BASE_URL=http://localhost:8080/api
 ## 🎨 Customization
 
 ### Themes
+
 - Light, Dark, and System theme support
 - Customizable color schemes
 - Responsive design for all screen sizes
 
 ### Components
+
 - Built with shadcn/ui components
 - Easily customizable with Tailwind CSS
 - TypeScript support for all components

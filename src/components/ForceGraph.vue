@@ -65,19 +65,33 @@ const emit = defineEmits<{
 
 const getNodeColor = (node: Node) => {
   if (node.status === 'offline') return '#ef4444'
-  
+
   switch (node.layer) {
-    case 'core': return '#3b82f6'
-    case 'distribution': return '#8b5cf6'
-    case 'access': return '#f59e0b'
-    case 'endpoint': return '#10b981'
-    default: return '#6b7280'
+    case 'core':
+      return '#3b82f6'
+    case 'distribution':
+      return '#8b5cf6'
+    case 'access':
+      return '#f59e0b'
+    case 'endpoint':
+      return '#10b981'
+    default:
+      return '#6b7280'
   }
 }
 
 const getVlanColor = (vlan?: number) => {
   if (!vlan) return '#6b7280'
-  const colors = ['#3b82f6', '#8b5cf6', '#f59e0b', '#10b981', '#ef4444', '#06b6d4', '#84cc16', '#f97316']
+  const colors = [
+    '#3b82f6',
+    '#8b5cf6',
+    '#f59e0b',
+    '#10b981',
+    '#ef4444',
+    '#06b6d4',
+    '#84cc16',
+    '#f97316'
+  ]
   return colors[vlan % colors.length]
 }
 
@@ -92,14 +106,16 @@ const initSimulation = () => {
   d3Select.select(container.value).selectAll('*').remove()
 
   // Create SVG
-  svg = d3Select.select(container.value)
+  svg = d3Select
+    .select(container.value)
     .append('svg')
     .attr('width', props.width)
     .attr('height', props.height)
     .style('background', 'transparent')
 
   // Add zoom behavior
-  const zoomBehavior = d3Zoom.zoom()
+  const zoomBehavior = d3Zoom
+    .zoom()
     .scaleExtent([0.1, 4])
     .on('zoom', (event: any) => {
       g.attr('transform', event.transform)
@@ -111,26 +127,28 @@ const initSimulation = () => {
   const g = svg.append('g')
 
   // Create links
-  linkElements = g.append('g')
+  linkElements = g
+    .append('g')
     .attr('class', 'links')
     .selectAll('line')
     .data(props.links)
     .enter()
     .append('line')
-    .attr('stroke', (d) => getLinkColor(d))
-    .attr('stroke-width', (d) => d.strength * 1.5)
+    .attr('stroke', d => getLinkColor(d))
+    .attr('stroke-width', d => d.strength * 1.5)
     .attr('stroke-opacity', 0.6)
 
   // Create nodes
-  nodeElements = g.append('g')
+  nodeElements = g
+    .append('g')
     .attr('class', 'nodes')
     .selectAll('circle')
     .data(props.nodes)
     .enter()
     .append('circle')
     .attr('r', props.nodeRadius)
-    .attr('fill', (d) => getNodeColor(d))
-    .attr('stroke', (d) => getNodeColor(d))
+    .attr('fill', d => getNodeColor(d))
+    .attr('stroke', d => getNodeColor(d))
     .attr('stroke-width', 2)
     .style('cursor', 'pointer')
     .on('click', (event: any, d: Node) => {
@@ -148,13 +166,14 @@ const initSimulation = () => {
     })
 
   // Create labels
-  labelElements = g.append('g')
+  labelElements = g
+    .append('g')
     .attr('class', 'labels')
     .selectAll('text')
     .data(props.nodes)
     .enter()
     .append('text')
-    .text((d) => d.ip)
+    .text(d => d.ip)
     .attr('text-anchor', 'middle')
     .attr('dy', 20)
     .style('font-size', '10px')
@@ -162,8 +181,15 @@ const initSimulation = () => {
     .style('pointer-events', 'none')
 
   // Create simulation
-  simulation = d3.forceSimulation(props.nodes)
-    .force('link', d3.forceLink(props.links).id((d: any) => d.id).distance(props.linkDistance))
+  simulation = d3
+    .forceSimulation(props.nodes)
+    .force(
+      'link',
+      d3
+        .forceLink(props.links)
+        .id((d: any) => d.id)
+        .distance(props.linkDistance)
+    )
     .force('charge', d3.forceManyBody().strength(props.chargeStrength))
     .force('center', d3.forceCenter(props.width / 2, props.height / 2))
     .force('collision', d3.forceCollide().radius(props.nodeRadius * 2))
@@ -176,13 +202,9 @@ const initSimulation = () => {
       .attr('x2', (d: any) => d.target.x)
       .attr('y2', (d: any) => d.target.y)
 
-    nodeElements
-      .attr('cx', (d: any) => d.x)
-      .attr('cy', (d: any) => d.y)
+    nodeElements.attr('cx', (d: any) => d.x).attr('cy', (d: any) => d.y)
 
-    labelElements
-      .attr('x', (d: any) => d.x)
-      .attr('y', (d: any) => d.y)
+    labelElements.attr('x', (d: any) => d.x).attr('y', (d: any) => d.y)
   })
 }
 
@@ -191,18 +213,28 @@ const updateSimulation = () => {
 
   // Update data
   simulation.nodes(props.nodes)
-  simulation.force('link', d3.forceLink(props.links).id((d: any) => d.id).distance(props.linkDistance))
+  simulation.force(
+    'link',
+    d3
+      .forceLink(props.links)
+      .id((d: any) => d.id)
+      .distance(props.linkDistance)
+  )
   simulation.force('charge', d3.forceManyBody().strength(props.chargeStrength))
 
   // Restart simulation
   simulation.alpha(0.3).restart()
 }
 
-watch(() => [props.nodes, props.links], () => {
-  nextTick(() => {
-    updateSimulation()
-  })
-}, { deep: true })
+watch(
+  () => [props.nodes, props.links],
+  () => {
+    nextTick(() => {
+      updateSimulation()
+    })
+  },
+  { deep: true }
+)
 
 onMounted(() => {
   nextTick(() => {

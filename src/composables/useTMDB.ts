@@ -1,11 +1,11 @@
 import { ref, onMounted } from 'vue'
-import { 
-  getPopularMovies, 
-  getPopularTVShows, 
-  getTrendingMovies, 
+import {
+  getPopularMovies,
+  getPopularTVShows,
+  getTrendingMovies,
   getTrendingTVShows,
   getPosterUrl,
-  type TMDBMovie, 
+  type TMDBMovie,
   type TMDBTVShow
 } from '@/services/tmdb'
 
@@ -38,7 +38,10 @@ export function useTMDB() {
       id: `tmdb-movie-${movie.id}`,
       title: movie.title,
       type: 'movie' as const,
-      addedDate: new Date(Date.now() - index * 24 * 60 * 60 * 1000).toISOString().slice(0, 19).replace('T', ' '),
+      addedDate: new Date(Date.now() - index * 24 * 60 * 60 * 1000)
+        .toISOString()
+        .slice(0, 19)
+        .replace('T', ' '),
       year: new Date(movie.release_date).getFullYear(),
       poster: movie.poster_path ? getPosterUrl(movie.poster_path) : undefined,
       traktId: `tmdb-${movie.id}`,
@@ -50,7 +53,10 @@ export function useTMDB() {
       id: `tmdb-tv-${show.id}`,
       title: show.name,
       type: 'tv' as const,
-      addedDate: new Date(Date.now() - index * 24 * 60 * 60 * 1000).toISOString().slice(0, 19).replace('T', ' '),
+      addedDate: new Date(Date.now() - index * 24 * 60 * 60 * 1000)
+        .toISOString()
+        .slice(0, 19)
+        .replace('T', ' '),
       year: new Date(show.first_air_date).getFullYear(),
       season: Math.floor(Math.random() * 3) + 1, // Mock season data
       episode: Math.floor(Math.random() * 8) + 1, // Mock episode data
@@ -65,7 +71,10 @@ export function useTMDB() {
       id: `photo-${index + 1}`,
       title: `Photo ${index + 1}`,
       type: 'photo' as const,
-      addedDate: new Date(Date.now() - index * 24 * 60 * 60 * 1000).toISOString().slice(0, 19).replace('T', ' '),
+      addedDate: new Date(Date.now() - index * 24 * 60 * 60 * 1000)
+        .toISOString()
+        .slice(0, 19)
+        .replace('T', ' '),
       thumbnail: `https://picsum.photos/300/300?random=${index + 1}`
     }))
 

@@ -15,14 +15,16 @@
       :status="'normal'"
       :compact="true"
     />
-    
+
     <!-- System Pills - Show most important on mobile -->
     <StatusPill
       :icon="Cpu"
       label="CPU"
       :value="systemInfo.cpuUsage"
       unit="%"
-      :status="systemInfo.cpuUsage > 80 ? 'critical' : systemInfo.cpuUsage > 60 ? 'warning' : 'normal'"
+      :status="
+        systemInfo.cpuUsage > 80 ? 'critical' : systemInfo.cpuUsage > 60 ? 'warning' : 'normal'
+      "
       :compact="true"
     />
     <StatusPill
@@ -30,10 +32,16 @@
       label="RAM"
       :value="systemInfo.memoryUsage"
       unit="%"
-      :status="systemInfo.memoryUsage > 85 ? 'critical' : systemInfo.memoryUsage > 70 ? 'warning' : 'normal'"
+      :status="
+        systemInfo.memoryUsage > 85
+          ? 'critical'
+          : systemInfo.memoryUsage > 70
+            ? 'warning'
+            : 'normal'
+      "
       :compact="true"
     />
-    
+
     <!-- Additional pills - Hidden on very small screens -->
     <div class="hidden sm:flex items-center gap-1.5 sm:gap-3">
       <StatusPill
@@ -47,14 +55,22 @@
         label="Disk"
         :value="systemInfo.diskUsage"
         unit="%"
-        :status="systemInfo.diskUsage > 90 ? 'critical' : systemInfo.diskUsage > 75 ? 'warning' : 'normal'"
+        :status="
+          systemInfo.diskUsage > 90 ? 'critical' : systemInfo.diskUsage > 75 ? 'warning' : 'normal'
+        "
       />
       <StatusPill
         :icon="Activity"
         label="Temp"
         :value="systemInfo.temperature"
         unit="°C"
-        :status="systemInfo.temperature > 70 ? 'critical' : systemInfo.temperature > 50 ? 'warning' : 'normal'"
+        :status="
+          systemInfo.temperature > 70
+            ? 'critical'
+            : systemInfo.temperature > 50
+              ? 'warning'
+              : 'normal'
+        "
       />
     </div>
   </div>

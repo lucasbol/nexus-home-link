@@ -3,9 +3,7 @@
     <div class="flex items-center justify-between mb-6">
       <h3 class="text-lg font-semibold">Media Library</h3>
       <div class="flex items-center gap-2">
-        <div class="text-sm text-muted-foreground">
-          {{ totalItems }} items in library
-        </div>
+        <div class="text-sm text-muted-foreground">{{ totalItems }} items in library</div>
         <button
           @click="refreshLibrary"
           class="p-2 rounded-lg bg-muted hover:bg-muted/80 transition-colors"
@@ -89,15 +87,15 @@
     <div v-if="selectedMediaTab === 'movies'" class="space-y-4">
       <h4 class="text-sm font-medium">Recently Added Movies</h4>
       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-        <div 
+        <div
           v-for="movie in recentMovies"
           :key="movie.id"
           class="group cursor-pointer"
           @click="openMovie(movie.tmdbUrl)"
         >
           <div class="aspect-[2/3] rounded-lg overflow-hidden bg-muted mb-2">
-            <img 
-              :src="movie.poster" 
+            <img
+              :src="movie.poster"
               :alt="movie.title"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
@@ -111,15 +109,15 @@
     <div v-else-if="selectedMediaTab === 'tv'" class="space-y-4">
       <h4 class="text-sm font-medium">Recently Added TV Shows</h4>
       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-        <div 
+        <div
           v-for="show in recentTvShows"
           :key="show.id"
           class="group cursor-pointer"
           @click="openTvShow(show.tmdbUrl)"
         >
           <div class="aspect-[2/3] rounded-lg overflow-hidden bg-muted mb-2">
-            <img 
-              :src="show.poster" 
+            <img
+              :src="show.poster"
               :alt="show.title"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
@@ -133,14 +131,10 @@
     <div v-else-if="selectedMediaTab === 'photos'" class="space-y-4">
       <h4 class="text-sm font-medium">Recently Added Photos</h4>
       <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
-        <div 
-          v-for="photo in recentPhotos"
-          :key="photo.id"
-          class="group cursor-pointer"
-        >
+        <div v-for="photo in recentPhotos" :key="photo.id" class="group cursor-pointer">
           <div class="aspect-square rounded-lg overflow-hidden bg-muted mb-2">
-            <img 
-              :src="photo.thumbnail" 
+            <img
+              :src="photo.thumbnail"
               :alt="photo.filename"
               class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
             />
@@ -155,12 +149,12 @@
     <div class="mt-6 pt-6 border-t border-border">
       <h4 class="text-sm font-medium mb-3">Service Status</h4>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3">
-        <div 
+        <div
           v-for="service in mediaServices"
           :key="service.id"
           class="flex items-center gap-3 p-3 rounded-lg bg-muted/30"
         >
-          <div 
+          <div
             :class="[
               'w-2 h-2 rounded-full',
               service.status === 'online' ? 'bg-green-500' : 'bg-red-500'
@@ -185,14 +179,7 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { 
-  RefreshCw, 
-  Film, 
-  Tv, 
-  Music, 
-  Image, 
-  ExternalLink 
-} from 'lucide-vue-next'
+import { RefreshCw, Film, Tv, Music, Image, ExternalLink } from 'lucide-vue-next'
 
 interface MediaItem {
   id: string
@@ -367,8 +354,12 @@ const mediaServices = ref<MediaService[]>([
   { id: 'overseerr', name: 'Overseerr', status: 'offline', url: 'http://overseerr.local:5055' }
 ])
 
-const totalItems = computed(() => 
-  mediaStats.value.movies + mediaStats.value.tvShows + mediaStats.value.music + mediaStats.value.photos
+const totalItems = computed(
+  () =>
+    mediaStats.value.movies +
+    mediaStats.value.tvShows +
+    mediaStats.value.music +
+    mediaStats.value.photos
 )
 
 const openMovie = (url?: string) => {

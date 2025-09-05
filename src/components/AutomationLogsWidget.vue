@@ -25,7 +25,9 @@
           </div>
           <div>
             <p class="text-sm text-green-800 dark:text-green-400">Successful</p>
-            <p class="text-2xl font-bold text-green-900 dark:text-green-300">{{ successfulRuns }}</p>
+            <p class="text-2xl font-bold text-green-900 dark:text-green-300">
+              {{ successfulRuns }}
+            </p>
           </div>
         </div>
       </div>
@@ -49,7 +51,9 @@
           </div>
           <div>
             <p class="text-sm text-blue-800 dark:text-blue-400">Running</p>
-            <p class="text-2xl font-bold text-blue-900 dark:text-blue-300">{{ runningAutomations }}</p>
+            <p class="text-2xl font-bold text-blue-900 dark:text-blue-300">
+              {{ runningAutomations }}
+            </p>
           </div>
         </div>
       </div>
@@ -61,7 +65,9 @@
           </div>
           <div>
             <p class="text-sm text-purple-800 dark:text-purple-400">Triggers</p>
-            <p class="text-2xl font-bold text-purple-900 dark:text-purple-300">{{ totalTriggers }}</p>
+            <p class="text-2xl font-bold text-purple-900 dark:text-purple-300">
+              {{ totalTriggers }}
+            </p>
           </div>
         </div>
       </div>
@@ -87,28 +93,33 @@
 
     <!-- Automation Logs -->
     <div class="space-y-3">
-      <div 
+      <div
         v-for="log in filteredLogs"
         :key="log.id"
         class="p-4 rounded-lg border border-border hover:bg-muted/30 transition-colors"
       >
         <div class="flex items-start gap-3">
-          <div 
+          <div
             :class="[
               'w-3 h-3 rounded-full mt-1.5 flex-shrink-0',
-              log.status === 'success' ? 'bg-green-500' :
-              log.status === 'error' ? 'bg-red-500' : 'bg-yellow-500'
+              log.status === 'success'
+                ? 'bg-green-500'
+                : log.status === 'error'
+                  ? 'bg-red-500'
+                  : 'bg-yellow-500'
             ]"
           />
           <div class="flex-1 min-w-0">
             <div class="flex items-center gap-2 mb-1">
               <span class="font-medium">{{ log.name }}</span>
-              <span 
+              <span
                 :class="[
                   'px-2 py-0.5 rounded-full text-xs font-medium',
-                  log.status === 'success' ? 'bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400' :
-                  log.status === 'error' ? 'bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-400' :
-                  'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-400'
+                  log.status === 'success'
+                    ? 'bg-green-100 text-green-800 dark:bg-green-900/20 dark:text-green-400'
+                    : log.status === 'error'
+                      ? 'bg-red-100 text-red-800 dark:bg-red-900/20 dark:text-red-400'
+                      : 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/20 dark:text-yellow-400'
                 ]"
               >
                 {{ log.status.toUpperCase() }}
@@ -120,7 +131,10 @@
               <span>{{ log.time }}</span>
               <span>{{ log.duration }}</span>
             </div>
-            <div v-if="log.error" class="mt-2 p-2 bg-red-50 dark:bg-red-900/20 rounded text-xs text-red-800 dark:text-red-400">
+            <div
+              v-if="log.error"
+              class="mt-2 p-2 bg-red-50 dark:bg-red-900/20 rounded text-xs text-red-800 dark:text-red-400"
+            >
               {{ log.error }}
             </div>
           </div>
@@ -149,12 +163,12 @@
     <div class="mt-6 pt-6 border-t border-border">
       <h4 class="text-sm font-medium mb-3">Recent Automations</h4>
       <div class="space-y-2">
-        <div 
+        <div
           v-for="automation in recentAutomations"
           :key="automation.id"
           class="flex items-center gap-3 p-3 rounded-lg bg-muted/30"
         >
-          <div 
+          <div
             :class="[
               'w-2 h-2 rounded-full',
               automation.status === 'success' ? 'bg-green-500' : 'bg-red-500'
@@ -173,12 +187,12 @@
 
 <script setup lang="ts">
 import { ref, computed } from 'vue'
-import { 
-  RefreshCw, 
-  CheckCircle, 
-  XCircle, 
-  Clock, 
-  Zap, 
+import {
+  RefreshCw,
+  CheckCircle,
+  XCircle,
+  Clock,
+  Zap,
   ExternalLink,
   Filter,
   CheckCircle2,
@@ -299,21 +313,17 @@ const recentAutomations = ref<RecentAutomation[]>([
 
 const totalAutomations = computed(() => automationLogs.value.length)
 
-const successfulRuns = computed(() => 
-  automationLogs.value.filter(log => log.status === 'success').length
+const successfulRuns = computed(
+  () => automationLogs.value.filter(log => log.status === 'success').length
 )
 
-const failedRuns = computed(() => 
-  automationLogs.value.filter(log => log.status === 'error').length
+const failedRuns = computed(() => automationLogs.value.filter(log => log.status === 'error').length)
+
+const runningAutomations = computed(
+  () => automationLogs.value.filter(log => log.status === 'running').length
 )
 
-const runningAutomations = computed(() => 
-  automationLogs.value.filter(log => log.status === 'running').length
-)
-
-const totalTriggers = computed(() => 
-  new Set(automationLogs.value.map(log => log.trigger)).size
-)
+const totalTriggers = computed(() => new Set(automationLogs.value.map(log => log.trigger)).size)
 
 const filteredLogs = computed(() => {
   if (selectedFilter.value === 'all') {

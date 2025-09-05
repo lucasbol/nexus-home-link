@@ -20,6 +20,7 @@
 ### Exception Cases
 
 Only commit/push automatically if:
+
 - User explicitly says "commit and push" in the same message
 - User says "save changes" or "save this"
 - User gives clear, unambiguous consent

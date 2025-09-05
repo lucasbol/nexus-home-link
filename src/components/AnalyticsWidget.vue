@@ -3,7 +3,7 @@
     <div class="flex items-center justify-between mb-6">
       <h3 class="text-lg font-semibold">Analytics Dashboard</h3>
       <div class="flex items-center gap-2">
-        <select 
+        <select
           v-model="selectedTimeRange"
           class="px-3 py-1 rounded-lg bg-muted border border-border text-sm"
         >
@@ -84,14 +84,14 @@
         <h4 class="text-sm font-medium mb-4">CPU Usage Over Time</h4>
         <div class="h-64 flex items-center justify-center">
           <div class="w-full space-y-2">
-            <div 
+            <div
               v-for="(point, index) in cpuUsageData"
               :key="index"
               class="flex items-center gap-4"
             >
               <div class="w-16 text-xs text-muted-foreground">{{ point.time }}</div>
               <div class="flex-1 bg-muted rounded-full h-3">
-                <div 
+                <div
                   class="bg-blue-600 h-3 rounded-full transition-all duration-300"
                   :style="{ width: `${point.usage}%` }"
                 />
@@ -107,7 +107,7 @@
         <h4 class="text-sm font-medium mb-4">Network Traffic</h4>
         <div class="h-64 flex items-center justify-center">
           <div class="w-full space-y-2">
-            <div 
+            <div
               v-for="(point, index) in networkTrafficData"
               :key="index"
               class="flex items-center gap-4"
@@ -117,7 +117,7 @@
                 <div class="flex items-center gap-2">
                   <div class="w-8 text-xs">↑</div>
                   <div class="flex-1 bg-muted rounded-full h-2">
-                    <div 
+                    <div
                       class="bg-green-600 h-2 rounded-full transition-all duration-300"
                       :style="{ width: `${Math.min(point.upload / 10, 100)}%` }"
                     />
@@ -127,7 +127,7 @@
                 <div class="flex items-center gap-2">
                   <div class="w-8 text-xs">↓</div>
                   <div class="flex-1 bg-muted rounded-full h-2">
-                    <div 
+                    <div
                       class="bg-blue-600 h-2 rounded-full transition-all duration-300"
                       :style="{ width: `${Math.min(point.download / 10, 100)}%` }"
                     />
@@ -145,20 +145,18 @@
     <div class="bg-muted/30 rounded-lg p-4 mb-6">
       <h4 class="text-sm font-medium mb-4">Service Usage</h4>
       <div class="space-y-3">
-        <div 
-          v-for="service in serviceUsage"
-          :key="service.id"
-          class="flex items-center gap-4"
-        >
+        <div v-for="service in serviceUsage" :key="service.id" class="flex items-center gap-4">
           <div class="w-24 text-sm font-medium">{{ service.name }}</div>
           <div class="flex-1 bg-muted rounded-full h-3">
-            <div 
+            <div
               class="bg-primary h-3 rounded-full transition-all duration-300"
               :style="{ width: `${service.usage}%` }"
             />
           </div>
           <div class="w-16 text-sm text-right">{{ service.usage }}%</div>
-          <div class="w-20 text-xs text-muted-foreground text-right">{{ service.requests }} req</div>
+          <div class="w-20 text-xs text-muted-foreground text-right">
+            {{ service.requests }} req
+          </div>
         </div>
       </div>
     </div>
@@ -168,11 +166,7 @@
       <div class="bg-muted/30 rounded-lg p-4">
         <h4 class="text-sm font-medium mb-4">Top Devices by Bandwidth</h4>
         <div class="space-y-3">
-          <div 
-            v-for="device in topDevices"
-            :key="device.id"
-            class="flex items-center gap-3"
-          >
+          <div v-for="device in topDevices" :key="device.id" class="flex items-center gap-3">
             <div class="w-8 h-8 bg-muted rounded-lg flex items-center justify-center">
               <component :is="device.icon" class="h-4 w-4" />
             </div>
@@ -188,17 +182,15 @@
       <div class="bg-muted/30 rounded-lg p-4">
         <h4 class="text-sm font-medium mb-4">Storage Usage</h4>
         <div class="space-y-3">
-          <div 
-            v-for="storage in storageUsage"
-            :key="storage.id"
-            class="flex items-center gap-3"
-          >
+          <div v-for="storage in storageUsage" :key="storage.id" class="flex items-center gap-3">
             <div class="w-8 h-8 bg-muted rounded-lg flex items-center justify-center">
               <HardDrive class="h-4 w-4" />
             </div>
             <div class="flex-1">
               <div class="text-sm font-medium">{{ storage.name }}</div>
-              <div class="text-xs text-muted-foreground">{{ storage.used }}GB / {{ storage.total }}GB</div>
+              <div class="text-xs text-muted-foreground">
+                {{ storage.used }}GB / {{ storage.total }}GB
+              </div>
             </div>
             <div class="text-sm font-medium">{{ storage.percentage }}%</div>
           </div>
@@ -210,12 +202,12 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import { 
-  RefreshCw, 
-  TrendingUp, 
-  Zap, 
-  Network, 
-  Users, 
+import {
+  RefreshCw,
+  TrendingUp,
+  Zap,
+  Network,
+  Users,
   HardDrive,
   Monitor,
   Smartphone,

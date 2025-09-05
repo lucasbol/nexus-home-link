@@ -1,11 +1,11 @@
 <template>
-  <div 
+  <div
     class="min-h-screen bg-cover bg-center bg-no-repeat relative"
     :style="{ backgroundImage: `url(${backgroundImage})` }"
   >
     <!-- Background Overlay -->
     <div class="absolute inset-0 bg-background/80 backdrop-blur-sm" />
-    
+
     <!-- Main Content -->
     <div class="relative z-10 flex min-h-screen">
       <!-- Navigation Sidebar -->

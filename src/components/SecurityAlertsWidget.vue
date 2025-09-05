@@ -8,10 +8,12 @@
           <h3 class="text-lg font-semibold text-foreground">Security Alerts</h3>
         </div>
         <div class="flex items-center gap-2">
-          <component :is="stats.criticalAlerts > 0 ? AlertTriangle : CheckCircle" class="w-4 h-4" :class="stats.criticalAlerts > 0 ? 'text-red-500' : 'text-green-500'" />
-          <span class="text-sm text-muted-foreground">
-            {{ stats.activeAlerts }} active alerts
-          </span>
+          <component
+            :is="stats.criticalAlerts > 0 ? AlertTriangle : CheckCircle"
+            class="w-4 h-4"
+            :class="stats.criticalAlerts > 0 ? 'text-red-500' : 'text-green-500'"
+          />
+          <span class="text-sm text-muted-foreground">{{ stats.activeAlerts }} active alerts</span>
         </div>
       </div>
 
@@ -54,15 +56,18 @@
                 <span class="text-sm font-medium text-foreground">{{ alert.title }}</span>
               </div>
               <div class="flex items-center gap-1">
-                <component :is="getStatusIcon(alert.status)" :class="getStatusIconClass(alert.status)" />
+                <component
+                  :is="getStatusIcon(alert.status)"
+                  :class="getStatusIconClass(alert.status)"
+                />
                 <Badge :class="getSeverityColor(alert.severity)">
                   {{ alert.severity }}
                 </Badge>
               </div>
             </div>
-            
+
             <p class="text-xs text-muted-foreground mb-2">{{ alert.description }}</p>
-            
+
             <div class="flex items-center justify-between text-xs text-muted-foreground">
               <div class="flex items-center gap-2">
                 <span>Source: {{ alert.source }}</span>
@@ -80,16 +85,21 @@
         <div class="flex items-center justify-between mb-2">
           <span class="text-sm font-medium text-foreground">Overall Security Status</span>
           <div class="flex items-center gap-1">
-            <component :is="stats.criticalAlerts === 0 ? CheckCircle : AlertTriangle" class="w-4 h-4" :class="stats.criticalAlerts === 0 ? 'text-green-500' : 'text-red-500'" />
+            <component
+              :is="stats.criticalAlerts === 0 ? CheckCircle : AlertTriangle"
+              class="w-4 h-4"
+              :class="stats.criticalAlerts === 0 ? 'text-green-500' : 'text-red-500'"
+            />
             <span class="text-sm font-medium text-foreground">
               {{ stats.criticalAlerts === 0 ? 'Secure' : 'Attention Required' }}
             </span>
           </div>
         </div>
         <div class="text-xs text-muted-foreground">
-          {{ stats.criticalAlerts === 0 
-            ? 'All systems are secure. No critical alerts detected.'
-            : `${stats.criticalAlerts} critical alert(s) require immediate attention.`
+          {{
+            stats.criticalAlerts === 0
+              ? 'All systems are secure. No critical alerts detected.'
+              : `${stats.criticalAlerts} critical alert(s) require immediate attention.`
           }}
         </div>
       </div>
@@ -100,9 +110,19 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import {
-  Shield, AlertTriangle, CheckCircle, XCircle, 
-  Lock, Unlock, Eye, EyeOff, Wifi, Router,
-  Clock, Activity, Zap
+  Shield,
+  AlertTriangle,
+  CheckCircle,
+  XCircle,
+  Lock,
+  Unlock,
+  Eye,
+  EyeOff,
+  Wifi,
+  Router,
+  Clock,
+  Activity,
+  Zap
 } from 'lucide-vue-next'
 import Card from './ui/card.vue'
 import Badge from './ui/badge.vue'
@@ -140,41 +160,61 @@ const stats = ref<SecurityStats>({
 
 const getAlertIcon = (type: string) => {
   switch (type) {
-    case 'firewall': return Shield
-    case 'intrusion': return AlertTriangle
-    case 'vulnerability': return XCircle
-    case 'access': return Lock
-    case 'malware': return Zap
-    case 'network': return Wifi
-    default: return Activity
+    case 'firewall':
+      return Shield
+    case 'intrusion':
+      return AlertTriangle
+    case 'vulnerability':
+      return XCircle
+    case 'access':
+      return Lock
+    case 'malware':
+      return Zap
+    case 'network':
+      return Wifi
+    default:
+      return Activity
   }
 }
 
 const getSeverityColor = (severity: string) => {
   switch (severity) {
-    case 'critical': return 'bg-red-500/20 text-red-500 border-red-500/30'
-    case 'high': return 'bg-orange-500/20 text-orange-500 border-orange-500/30'
-    case 'medium': return 'bg-yellow-500/20 text-yellow-500 border-yellow-500/30'
-    case 'low': return 'bg-blue-500/20 text-blue-500 border-blue-500/30'
-    default: return 'bg-gray-500/20 text-gray-500 border-gray-500/30'
+    case 'critical':
+      return 'bg-red-500/20 text-red-500 border-red-500/30'
+    case 'high':
+      return 'bg-orange-500/20 text-orange-500 border-orange-500/30'
+    case 'medium':
+      return 'bg-yellow-500/20 text-yellow-500 border-yellow-500/30'
+    case 'low':
+      return 'bg-blue-500/20 text-blue-500 border-blue-500/30'
+    default:
+      return 'bg-gray-500/20 text-gray-500 border-gray-500/30'
   }
 }
 
 const getStatusIcon = (status: string) => {
   switch (status) {
-    case 'active': return AlertTriangle
-    case 'resolved': return CheckCircle
-    case 'investigating': return Clock
-    default: return Activity
+    case 'active':
+      return AlertTriangle
+    case 'resolved':
+      return CheckCircle
+    case 'investigating':
+      return Clock
+    default:
+      return Activity
   }
 }
 
 const getStatusIconClass = (status: string) => {
   switch (status) {
-    case 'active': return 'w-3 h-3 text-red-500'
-    case 'resolved': return 'w-3 h-3 text-green-500'
-    case 'investigating': return 'w-3 h-3 text-yellow-500'
-    default: return 'w-3 h-3 text-gray-500'
+    case 'active':
+      return 'w-3 h-3 text-red-500'
+    case 'resolved':
+      return 'w-3 h-3 text-green-500'
+    case 'investigating':
+      return 'w-3 h-3 text-yellow-500'
+    default:
+      return 'w-3 h-3 text-gray-500'
   }
 }
 
@@ -262,13 +302,13 @@ onMounted(() => {
 
   setTimeout(() => {
     alerts.value = mockAlerts
-    
+
     const active = mockAlerts.filter(alert => alert.status === 'active').length
     const critical = mockAlerts.filter(alert => alert.severity === 'critical').length
     const resolved = mockAlerts.filter(alert => alert.status === 'resolved').length
     const firewall = mockAlerts.filter(alert => alert.type === 'firewall').length
     const intrusion = mockAlerts.filter(alert => alert.type === 'intrusion').length
-    
+
     stats.value = {
       totalAlerts: mockAlerts.length,
       activeAlerts: active,

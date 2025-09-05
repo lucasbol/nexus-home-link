@@ -1,4 +1,4 @@
-import { ref, computed, watch } from 'vue'
+import { ref, computed } from 'vue'
 
 type Theme = 'light' | 'dark' | 'system'
 
@@ -17,7 +17,7 @@ export function useTheme() {
 
   const applyTheme = (theme: Theme) => {
     const root = document.documentElement
-    
+
     if (theme === 'dark' || (theme === 'system' && systemTheme.value === 'dark')) {
       root.classList.add('dark')
     } else {

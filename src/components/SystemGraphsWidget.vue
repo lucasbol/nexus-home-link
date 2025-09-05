@@ -30,7 +30,7 @@
           <Cpu class="h-8 w-8 text-green-600" />
         </div>
         <div class="mt-2 w-full bg-muted rounded-full h-2">
-          <div 
+          <div
             class="bg-green-600 h-2 rounded-full transition-all duration-300"
             :style="{ width: `${cpuUsage}%` }"
           />
@@ -46,7 +46,7 @@
           <MemoryStick class="h-8 w-8 text-blue-600" />
         </div>
         <div class="mt-2 w-full bg-muted rounded-full h-2">
-          <div 
+          <div
             class="bg-blue-600 h-2 rounded-full transition-all duration-300"
             :style="{ width: `${memoryUsage}%` }"
           />
@@ -62,7 +62,7 @@
           <HardDrive class="h-8 w-8 text-orange-600" />
         </div>
         <div class="mt-2 w-full bg-muted rounded-full h-2">
-          <div 
+          <div
             class="bg-orange-600 h-2 rounded-full transition-all duration-300"
             :style="{ width: `${diskUsage}%` }"
           />
@@ -90,13 +90,17 @@
         <h4 class="text-sm font-medium mb-4">CPU & Memory Usage</h4>
         <div class="h-64 flex items-center justify-center">
           <div class="w-full space-y-4">
-            <div v-for="(point, index) in performanceData" :key="index" class="flex items-center gap-4">
+            <div
+              v-for="(point, index) in performanceData"
+              :key="index"
+              class="flex items-center gap-4"
+            >
               <div class="w-16 text-xs text-muted-foreground">{{ point.time }}</div>
               <div class="flex-1 space-y-2">
                 <div class="flex items-center gap-2">
                   <div class="w-12 text-xs">CPU</div>
                   <div class="flex-1 bg-muted rounded-full h-2">
-                    <div 
+                    <div
                       class="bg-green-600 h-2 rounded-full transition-all duration-300"
                       :style="{ width: `${point.cpu}%` }"
                     />
@@ -106,7 +110,7 @@
                 <div class="flex items-center gap-2">
                   <div class="w-12 text-xs">RAM</div>
                   <div class="flex-1 bg-muted rounded-full h-2">
-                    <div 
+                    <div
                       class="bg-blue-600 h-2 rounded-full transition-all duration-300"
                       :style="{ width: `${point.memory}%` }"
                     />
@@ -130,7 +134,7 @@
                 <div class="flex items-center gap-2">
                   <div class="w-12 text-xs">↑</div>
                   <div class="flex-1 bg-muted rounded-full h-2">
-                    <div 
+                    <div
                       class="bg-purple-600 h-2 rounded-full transition-all duration-300"
                       :style="{ width: `${Math.min(point.upload / 100, 100)}%` }"
                     />
@@ -140,7 +144,7 @@
                 <div class="flex items-center gap-2">
                   <div class="w-12 text-xs">↓</div>
                   <div class="flex-1 bg-muted rounded-full h-2">
-                    <div 
+                    <div
                       class="bg-purple-600 h-2 rounded-full transition-all duration-300"
                       :style="{ width: `${Math.min(point.download / 100, 100)}%` }"
                     />

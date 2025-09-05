@@ -26,11 +26,9 @@
               <p class="text-sm font-medium text-foreground">Team Meeting</p>
               <p class="text-xs text-muted-foreground">2:00 PM - 3:00 PM</p>
             </div>
-            <Badge class="bg-blue-500/20 text-blue-500 border-blue-500/30">
-              Work
-            </Badge>
+            <Badge class="bg-blue-500/20 text-blue-500 border-blue-500/30">Work</Badge>
           </div>
-          
+
           <div class="flex items-center gap-3 p-3 bg-muted/10 rounded-lg border border-border/30">
             <div class="p-2 rounded-md bg-green-500/20 text-green-500">
               <Calendar class="w-4 h-4" />
@@ -39,9 +37,7 @@
               <p class="text-sm font-medium text-foreground">Server Maintenance</p>
               <p class="text-xs text-muted-foreground">8:00 PM - 10:00 PM</p>
             </div>
-            <Badge class="bg-green-500/20 text-green-500 border-green-500/30">
-              System
-            </Badge>
+            <Badge class="bg-green-500/20 text-green-500 border-green-500/30">System</Badge>
           </div>
         </div>
       </div>
@@ -58,11 +54,9 @@
               <p class="text-sm font-medium text-foreground">Backup Verification</p>
               <p class="text-xs text-muted-foreground">Tomorrow • 9:00 AM</p>
             </div>
-            <Badge class="bg-purple-500/20 text-purple-500 border-purple-500/30">
-              Maintenance
-            </Badge>
+            <Badge class="bg-purple-500/20 text-purple-500 border-purple-500/30">Maintenance</Badge>
           </div>
-          
+
           <div class="flex items-center gap-3 p-3 bg-muted/10 rounded-lg border border-border/30">
             <div class="p-2 rounded-md bg-orange-500/20 text-orange-500">
               <Calendar class="w-4 h-4" />
@@ -71,9 +65,7 @@
               <p class="text-sm font-medium text-foreground">Security Audit</p>
               <p class="text-xs text-muted-foreground">Friday • 2:00 PM</p>
             </div>
-            <Badge class="bg-orange-500/20 text-orange-500 border-orange-500/30">
-              Security
-            </Badge>
+            <Badge class="bg-orange-500/20 text-orange-500 border-orange-500/30">Security</Badge>
           </div>
         </div>
       </div>

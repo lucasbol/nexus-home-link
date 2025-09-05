@@ -47,10 +47,14 @@ const themes = [
 
 const getCurrentThemeIcon = () => {
   switch (currentTheme.value) {
-    case 'light': return Sun
-    case 'dark': return Moon
-    case 'system': return Monitor
-    default: return Monitor
+    case 'light':
+      return Sun
+    case 'dark':
+      return Moon
+    case 'system':
+      return Monitor
+    default:
+      return Monitor
   }
 }
 
@@ -62,18 +66,18 @@ const getCurrentThemeLabel = () => {
 const selectTheme = (theme: string) => {
   currentTheme.value = theme
   isOpen.value = false
-  
+
   // Apply theme
   const root = document.documentElement
   root.classList.remove('light', 'dark')
-  
+
   if (theme === 'system') {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches
     root.classList.add(prefersDark ? 'dark' : 'light')
   } else {
     root.classList.add(theme)
   }
-  
+
   // Save to localStorage
   localStorage.setItem('theme', theme)
 }
@@ -89,10 +93,10 @@ onMounted(() => {
   // Load saved theme
   const savedTheme = localStorage.getItem('theme') || 'system'
   currentTheme.value = savedTheme
-  
+
   // Apply saved theme
   selectTheme(savedTheme)
-  
+
   // Listen for system theme changes
   const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
   const handleSystemThemeChange = () => {
@@ -100,12 +104,12 @@ onMounted(() => {
       selectTheme('system')
     }
   }
-  
+
   mediaQuery.addEventListener('change', handleSystemThemeChange)
-  
+
   // Add click outside listener
   document.addEventListener('click', handleClickOutside)
-  
+
   onUnmounted(() => {
     mediaQuery.removeEventListener('change', handleSystemThemeChange)
     document.removeEventListener('click', handleClickOutside)
