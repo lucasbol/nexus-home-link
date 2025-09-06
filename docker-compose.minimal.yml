@@ -12,7 +12,7 @@ services:
       dockerfile: Dockerfile
     container_name: nexus-home-link-frontend
     ports:
-      - "3000:80"
+      - "2244:80"
     environment:
       - VITE_API_BASE_URL=http://backend:80/api
       - VITE_ENABLE_MOCK_DATA=true

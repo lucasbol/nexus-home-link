@@ -52,17 +52,25 @@
           "dependencies": {
             "Aspire.Dashboard.Sdk.win-x64": {
               "target": "Package",
-              "version": "[8.2.2, )",
+              "version": "[9.4.0, )",
               "autoReferenced": true
             },
             "Aspire.Hosting.AppHost": {
               "target": "Package",
-              "version": "[8.2.2, )"
+              "version": "[9.4.0, )"
+            },
+            "Aspire.Hosting.NodeJS": {
+              "target": "Package",
+              "version": "[9.4.0, )"
             },
             "Aspire.Hosting.Orchestration.win-x64": {
               "target": "Package",
-              "version": "[8.2.2, )",
+              "version": "[9.4.0, )",
               "autoReferenced": true
+            },
+            "CommunityToolkit.Aspire.Hosting.NodeJS.Extensions": {
+              "target": "Package",
+              "version": "[8.2.1, )"
             }
           },
           "imports": [

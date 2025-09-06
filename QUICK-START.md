@@ -6,16 +6,16 @@ The simplest way to run Nexus Home Link is with a single `docker run` command!
 
 ```bash
 # Run the dashboard (uses mock data)
-docker run -p 3000:80 ghcr.io/lucasbol/nexus-home-link:latest
+docker run -p 2244:80 ghcr.io/lucasbol/nexus-home-link:latest
 ```
 
 That's it! 🎉
 
 ## Access Your Dashboard
 
-- **Dashboard**: http://localhost:3000
-- **API**: http://localhost:3000/api
-- **API Docs**: http://localhost:3000/swagger
+- **Dashboard**: http://localhost:2244
+- **API**: http://localhost:2244/api
+- **API Docs**: http://localhost:2244/swagger
 
 ## What You Get
 
@@ -29,7 +29,7 @@ That's it! 🎉
 
 ```bash
 # With custom environment variables
-docker run -p 3000:80 \
+docker run -p 2244:80 \
   -e VITE_TMDB_API_KEY=your_key \
   -e VITE_TMDB_ACCESS_TOKEN=your_token \
   ghcr.io/lucasbol/nexus-home-link:latest
@@ -39,7 +39,7 @@ docker run -p 3000:80 \
 
 ```bash
 # Run with hot reload (for development)
-docker run -p 3000:80 \
+docker run -p 2244:80 \
   -v $(pwd)/frontend:/app/frontend \
   ghcr.io/lucasbol/nexus-home-link:dev
 ```

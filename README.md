@@ -24,7 +24,7 @@ That's it! Your development environment is ready with:
 - ✅ Pre-configured development scripts
 
 **Access your applications:**
-- Frontend: http://localhost:3000
+- Frontend: http://localhost:2244
 - API: http://localhost:5000
 - Aspire Dashboard: https://localhost:7443
 
@@ -136,7 +136,7 @@ cd NexusHomeLink.AppHost
 dotnet run
 
 # This will start both frontend and backend automatically
-# Frontend: https://localhost:3000
+# Frontend: https://localhost:2244
 # Backend API: https://localhost:7443
 # Aspire Dashboard: https://localhost:15000
 ```
@@ -161,7 +161,7 @@ pnpm install
 # Start development server
 pnpm dev
 
-# Frontend will be available at http://localhost:3000
+# Frontend will be available at http://localhost:2244
 ```
 
 ### Production Build
@@ -426,7 +426,7 @@ docker-compose up -d --build
 
 #### What Gets Deployed
 
-- **Frontend**: Vue 3 dashboard (http://localhost:3000)
+- **Frontend**: Vue 3 dashboard (http://localhost:2244)
 - **Backend**: .NET API with plugin system (http://localhost:5000)
 - **Database**: SQL Server 2022 (localhost:1433)
 - **Cache**: Redis 7 (localhost:6379)
@@ -484,7 +484,7 @@ docker-compose logs -f backend
 #### Health Checks
 
 All services include health checks:
-- Frontend: `http://localhost:3000/health`
+- Frontend: `http://localhost:2244/health`
 - Backend: `http://localhost:5000/health`
 - Database: SQL connection test
 - Redis: `redis-cli ping`

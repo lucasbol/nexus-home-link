@@ -2,10 +2,12 @@
 
 namespace Projects;
 
+#pragma warning disable CS8981 // The type name only contains lower-cased ascii characters. Such names may become reserved for the language.
 [global::System.CodeDom.Compiler.GeneratedCode("Aspire.Hosting", null)]
 [global::System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverage(Justification = "Generated code.")]
 [global::System.Diagnostics.DebuggerDisplay("Type = {GetType().Name,nq}, ProjectPath = {ProjectPath}")]
 public class NexusHomeLink_Api : global::Aspire.Hosting.IProjectMetadata
+#pragma warning restore CS8981
 {
     public string ProjectPath => """F:\homelab\nexus-home-link\backend\src\NexusHomeLink.Api\NexusHomeLink.Api.csproj""";
 }

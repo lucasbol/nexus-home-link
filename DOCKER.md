@@ -30,14 +30,14 @@ chmod +x deploy.sh && ./deploy.sh
 ## What's Included
 
 ### Full Stack (`docker-compose.yml`)
-- **Frontend**: Vue 3 dashboard (port 3000)
+- **Frontend**: Vue 3 dashboard (port 2244)
 - **Backend**: .NET API (port 5000)
 - **Database**: SQL Server 2022 (port 1433)
 - **Cache**: Redis 7 (port 6379)
 - **Proxy**: Nginx (port 80/443)
 
 ### Minimal Stack (`docker-compose.minimal.yml`)
-- **Frontend**: Vue 3 dashboard (port 3000)
+- **Frontend**: Vue 3 dashboard (port 2244)
 - **Backend**: .NET API (port 5000)
 
 ## Configuration
@@ -62,7 +62,7 @@ chmod +x deploy.sh && ./deploy.sh
 
 ## Access Points
 
-- **Dashboard**: http://localhost:3000
+- **Dashboard**: http://localhost:2244
 - **API**: http://localhost:5000
 - **API Docs**: http://localhost:5000/swagger
 - **Database**: localhost:1433 (sa/NexusHomeLink123!)
@@ -128,7 +128,7 @@ docker-compose up -d --build frontend
 Edit `docker-compose.yml` to change ports:
 ```yaml
 ports:
-  - "3001:80"  # Change 3000 to 3001
+  - "2245:80"  # Change 2244 to 2245
 ```
 
 ## Data Persistence

@@ -11,19 +11,21 @@ using System;
 using System.Reflection;
 
 [assembly: Microsoft.Extensions.Configuration.UserSecrets.UserSecretsIdAttribute("44385451-bb3f-4704-ac9a-346951dcc575")]
-[assembly: System.Reflection.AssemblyMetadata("dcpclipath", ("C:\\Users\\Lucas\\.nuget\\packages\\aspire.hosting.orchestration.win-x64\\8.2.2\\tools\\d" +
+[assembly: System.Reflection.AssemblyMetadata("dcpclipath", ("C:\\Users\\Lucas\\.nuget\\packages\\aspire.hosting.orchestration.win-x64\\9.4.0\\tools\\d" +
     "cp.exe"))]
-[assembly: System.Reflection.AssemblyMetadata("dcpextensionpaths", ("C:\\Users\\Lucas\\.nuget\\packages\\aspire.hosting.orchestration.win-x64\\8.2.2\\tools\\e" +
+[assembly: System.Reflection.AssemblyMetadata("dcpextensionpaths", ("C:\\Users\\Lucas\\.nuget\\packages\\aspire.hosting.orchestration.win-x64\\9.4.0\\tools\\e" +
     "xt\\"))]
-[assembly: System.Reflection.AssemblyMetadata("dcpbinpath", ("C:\\Users\\Lucas\\.nuget\\packages\\aspire.hosting.orchestration.win-x64\\8.2.2\\tools\\e" +
+[assembly: System.Reflection.AssemblyMetadata("dcpbinpath", ("C:\\Users\\Lucas\\.nuget\\packages\\aspire.hosting.orchestration.win-x64\\9.4.0\\tools\\e" +
     "xt\\bin\\"))]
 [assembly: System.Reflection.AssemblyMetadata("apphostprojectpath", "F:\\homelab\\nexus-home-link\\NexusHomeLink.AppHost")]
-[assembly: System.Reflection.AssemblyMetadata("aspiredashboardpath", ("C:\\Users\\Lucas\\.nuget\\packages\\aspire.dashboard.sdk.win-x64\\8.2.2\\tools\\Aspire.Da" +
+[assembly: System.Reflection.AssemblyMetadata("apphostprojectname", "NexusHomeLink.AppHost.csproj")]
+[assembly: System.Reflection.AssemblyMetadata("aspiredashboardpath", ("C:\\Users\\Lucas\\.nuget\\packages\\aspire.dashboard.sdk.win-x64\\9.4.0\\tools\\Aspire.Da" +
     "shboard.exe"))]
+[assembly: System.Reflection.AssemblyMetadataAttribute("apphostprojectbaseintermediateoutputpath", "F:\\homelab\\nexus-home-link\\NexusHomeLink.AppHost\\obj\\")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("NexusHomeLink.AppHost")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e09330232b8a668b0fee8760d45dd2c6aa0b82f1")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b9758fe33e81ff3cb1e193363dd1f57eb131d1fd")]
 [assembly: System.Reflection.AssemblyProductAttribute("NexusHomeLink.AppHost")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NexusHomeLink.AppHost")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

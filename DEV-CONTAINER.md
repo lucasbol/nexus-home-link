@@ -94,7 +94,7 @@ docker-compose -f .devcontainer/docker-compose.yml exec devcontainer bash
 ```
 
 ### Access Points
-- **Frontend**: http://localhost:3000
+- **Frontend**: http://localhost:2244
 - **API**: http://localhost:5000
 - **Aspire Dashboard**: https://localhost:7443
 - **PostgreSQL**: localhost:5432 (if enabled)
@@ -104,7 +104,7 @@ docker-compose -f .devcontainer/docker-compose.yml exec devcontainer bash
 When you start the development environment, you'll see clickable links in the VS Code terminal:
 ```
 🔗 Clickable links (VS Code terminal):
-   Frontend:     http://localhost:3000
+   Frontend:     http://localhost:2244
    API:          http://localhost:5000
    Aspire:       https://localhost:7443
 ```
@@ -135,7 +135,7 @@ VITE_API_BASE_URL=http://localhost:5000/api
 
 ### Port Forwarding
 The following ports are automatically forwarded:
-- `3000` - Frontend (Vue.js)
+- `2244` - Frontend (Vue.js)
 - `5000` - Backend API (HTTP)
 - `7026` - Backend API (HTTPS)
 - `7443` - Aspire Dashboard
@@ -164,7 +164,7 @@ The Dev Container includes Docker-in-Docker support, allowing you to:
 
 # Or manually
 docker build -f Dockerfile.minimal -t nexus-home-link .
-docker run -p 3000:80 nexus-home-link
+docker run -p 2244:80 nexus-home-link
 ```
 
 ## 🚀 Deployment Testing
@@ -185,7 +185,7 @@ docker-compose -f docker-compose.minimal.yml up
 docker build -f Dockerfile.minimal -t nexus-home-link .
 
 # Deploy to your homelab
-docker run -d -p 3000:80 --name nexus-dashboard nexus-home-link
+docker run -d -p 2244:80 --name nexus-dashboard nexus-home-link
 ```
 
 ## 🔍 Troubleshooting
@@ -195,7 +195,7 @@ docker run -d -p 3000:80 --name nexus-dashboard nexus-home-link
 **Port Conflicts**:
 ```bash
 # Check what's using the ports
-netstat -tulpn | grep :3000
+netstat -tulpn | grep :2244
 netstat -tulpn | grep :5000
 
 # Kill processes if needed
