@@ -24,6 +24,24 @@ echo -e "   Frontend:     ${CYAN}http://localhost:3000${NC}"
 echo -e "   API:          ${CYAN}http://localhost:5000${NC}"
 echo -e "   Aspire:       ${CYAN}https://localhost:7443${NC}"
 echo ""
+
+# Start frontend in a separate terminal if available
+echo -e "${GREEN}🎨 Starting frontend in separate terminal...${NC}"
+if command -v gnome-terminal &> /dev/null; then
+    gnome-terminal --title="Nexus Home Link - Frontend" -- bash -c "cd frontend && pnpm dev; exec bash" &
+elif command -v xterm &> /dev/null; then
+    xterm -title "Nexus Home Link - Frontend" -e "cd frontend && pnpm dev" &
+elif command -v konsole &> /dev/null; then
+    konsole --title "Nexus Home Link - Frontend" -e bash -c "cd frontend && pnpm dev; exec bash" &
+else
+    echo -e "${YELLOW}⚠️  No terminal emulator found. Frontend will run in background.${NC}"
+    echo -e "   You can start it manually with: ./dev.sh frontend"
+    # Start frontend in background
+    cd frontend && pnpm dev &
+    cd ..
+fi
+
+echo ""
 echo -e "${YELLOW}Press Ctrl+C to stop the development server${NC}"
 echo ""
 

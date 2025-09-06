@@ -34,6 +34,22 @@ function Start-Development {
     Write-Host "   API:          http://localhost:5000" -ForegroundColor Cyan
     Write-Host "   Aspire:       https://localhost:7443" -ForegroundColor Cyan
     Write-Host ""
+    
+    # Start frontend in a separate PowerShell window
+    Write-Host "🎨 Starting frontend in separate terminal..." -ForegroundColor Green
+    $frontendScript = @"
+Write-Host "🎨 Nexus Home Link - Frontend Server" -ForegroundColor Green
+Write-Host "Frontend: http://localhost:3000" -ForegroundColor Cyan
+Write-Host "Press Ctrl+C to stop the frontend server" -ForegroundColor Yellow
+Write-Host ""
+Set-Location "frontend"
+pnpm dev
+"@
+    
+    $frontendScript | Out-File -FilePath "start-frontend.ps1" -Encoding UTF8
+    Start-Process powershell -ArgumentList "-NoExit", "-File", "start-frontend.ps1"
+    
+    Write-Host ""
     Write-Host "Press Ctrl+C to stop the development server" -ForegroundColor Yellow
     Write-Host ""
     
@@ -125,6 +141,11 @@ function Clean-Solution {
             Remove-Item -Recurse -Force "dist"
         }
         Set-Location ".."
+    }
+    
+    # Clean up temporary scripts
+    if (Test-Path "start-frontend.ps1") {
+        Remove-Item "start-frontend.ps1" -Force
     }
     
     Write-Host "✅ Clean complete!" -ForegroundColor Green

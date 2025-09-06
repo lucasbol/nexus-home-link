@@ -111,6 +111,17 @@ When you start the development environment, you'll see clickable links in the VS
 
 Simply click on any URL to open it in your browser! This works in VS Code's integrated terminal.
 
+### 🎨 Automatic Frontend Terminal
+The development scripts automatically open a separate terminal for the Vite frontend server:
+- **Linux**: Uses `gnome-terminal`, `xterm`, or `konsole`
+- **Windows**: Opens a new PowerShell window
+- **Fallback**: Runs frontend in background if no terminal emulator is found
+
+This gives you:
+- **Main Terminal**: .NET Aspire backend logs
+- **Frontend Terminal**: Vite development server logs
+- **Easy Monitoring**: Separate logs for each service
+
 ## 🔧 Configuration
 
 ### Environment Variables

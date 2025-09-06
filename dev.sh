@@ -10,6 +10,23 @@ case "$1" in
         echo "   API:          http://localhost:5000"
         echo "   Aspire:       https://localhost:7443"
         echo ""
+        
+        # Start frontend in a separate terminal if available
+        if command -v gnome-terminal &> /dev/null; then
+            echo "🎨 Starting frontend in separate terminal..."
+            gnome-terminal --title="Nexus Home Link - Frontend" -- bash -c "cd frontend && pnpm dev; exec bash"
+        elif command -v xterm &> /dev/null; then
+            echo "🎨 Starting frontend in separate terminal..."
+            xterm -title "Nexus Home Link - Frontend" -e "cd frontend && pnpm dev" &
+        elif command -v konsole &> /dev/null; then
+            echo "🎨 Starting frontend in separate terminal..."
+            konsole --title "Nexus Home Link - Frontend" -e bash -c "cd frontend && pnpm dev; exec bash" &
+        else
+            echo "⚠️  No terminal emulator found. Frontend will run in background."
+            echo "   You can start it manually with: ./dev.sh frontend"
+        fi
+        
+        echo ""
         echo "Press Ctrl+C to stop the development server"
         echo ""
         
