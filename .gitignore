@@ -38,7 +38,6 @@ obj/
 *.pidb
 *.booproj
 *.svd
-*.pdb
 *.opendb
 *.opensdf
 *.sdf
@@ -49,7 +48,24 @@ obj/
 *.vsp
 *.vspx
 *.sap
-*.pidb
+
+# .NET Core / .NET 5+ specific
+*.deps.json
+*.runtimeconfig.json
+*.runtimeconfig.dev.json
+apphost.exe
+*.apphost.exe
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+# Visual Studio
+.vs/
 *.user
 *.useros
 *.suo
@@ -57,7 +73,6 @@ obj/
 *.pidb
 *.booproj
 *.svd
-*.pdb
 *.opendb
 *.opensdf
 *.sdf
@@ -68,6 +83,10 @@ obj/
 *.vsp
 *.vspx
 *.sap
+
+# JetBrains Rider
+.idea/
+*.sln.iml
 
 # Coverage reports
 coverage/

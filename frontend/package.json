@@ -4,6 +4,7 @@
   "description": "Modern homelab dashboard built with Vue 3 and TypeScript",
   "type": "module",
   "scripts": {
+    "start": "vite --host 0.0.0.0",
     "dev": "vite",
     "build": "vite build",
     "build:check": "vue-tsc && vite build",
