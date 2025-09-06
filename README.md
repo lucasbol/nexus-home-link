@@ -2,6 +2,34 @@
 
 A modern, full-stack homelab dashboard built with Vue 3 frontend and .NET Core backend, orchestrated with .NET Aspire. Monitor your homelab infrastructure with real-time data visualization, smart home integration, and comprehensive system monitoring through a plugin-based architecture.
 
+## 🐳 Quick Start with Dev Containers
+
+**The easiest way to get started!** No need to install .NET, Node.js, or any dependencies on your local machine.
+
+### Prerequisites
+- [VS Code](https://code.visualstudio.com/)
+- [Dev Containers extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers)
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/)
+
+### Get Started in 3 Steps
+1. **Clone and Open**: `git clone https://github.com/lucasbol/nexus-home-link.git && code .`
+2. **Reopen in Container**: Press `Ctrl+Shift+P` → "Dev Containers: Reopen in Container"
+3. **Start Development**: Run `./dev.sh start`
+
+That's it! Your development environment is ready with:
+- ✅ .NET 9 SDK with all tools
+- ✅ Node.js 20 LTS with pnpm
+- ✅ Docker-in-Docker for testing
+- ✅ All VS Code extensions pre-installed
+- ✅ Pre-configured development scripts
+
+**Access your applications:**
+- Frontend: http://localhost:3000
+- API: http://localhost:5000
+- Aspire Dashboard: https://localhost:7443
+
+📚 **Full Dev Container Guide**: See [DEV-CONTAINER.md](DEV-CONTAINER.md) for detailed setup and troubleshooting.
+
 ## ✨ Features
 
 ### 🏠 **Overview Dashboard**
