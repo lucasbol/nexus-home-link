@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NexusHomeLink.Plugins.SystemMonitoring")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3c629569f26f714c17e2a90c6fa67b301fbb1f2d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e09330232b8a668b0fee8760d45dd2c6aa0b82f1")]
 [assembly: System.Reflection.AssemblyProductAttribute("NexusHomeLink.Plugins.SystemMonitoring")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NexusHomeLink.Plugins.SystemMonitoring")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

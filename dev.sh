@@ -4,9 +4,11 @@
 case "$1" in
     "start")
         echo "🚀 Starting Nexus Home Link with .NET Aspire..."
-        echo "   • Frontend: http://localhost:3000"
-        echo "   • API: http://localhost:5000"
-        echo "   • Aspire Dashboard: https://localhost:7443"
+        echo ""
+        echo "🔗 Clickable links (VS Code terminal):"
+        echo "   Frontend:     http://localhost:3000"
+        echo "   API:          http://localhost:5000"
+        echo "   Aspire:       https://localhost:7443"
         echo ""
         echo "Press Ctrl+C to stop the development server"
         echo ""

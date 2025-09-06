@@ -242,3 +242,39 @@ echo "   • Aspire Dashboard: https://localhost:7443"
 echo "   • Development script: ./dev.sh"
 echo "   • Quick start guide: DEV-CONTAINER-QUICK-START.md"
 echo ""
+
+# Create clickable links for VS Code terminal
+echo "🔗 Clickable links (VS Code terminal):"
+echo "   Frontend:     http://localhost:3000"
+echo "   API:          http://localhost:5000"
+echo "   Aspire:       https://localhost:7443"
+echo ""
+
+# Create a startup script with clickable links
+cat > start-with-links.sh << 'EOF'
+#!/bin/bash
+
+# Colors for output
+GREEN='\033[0;32m'
+CYAN='\033[0;36m'
+YELLOW='\033[1;33m'
+NC='\033[0m' # No Color
+
+echo -e "${GREEN}🚀 Starting Nexus Home Link with .NET Aspire...${NC}"
+echo ""
+echo -e "${CYAN}🔗 Clickable links (VS Code terminal):${NC}"
+echo -e "   Frontend:     ${CYAN}http://localhost:3000${NC}"
+echo -e "   API:          ${CYAN}http://localhost:5000${NC}"
+echo -e "   Aspire:       ${CYAN}https://localhost:7443${NC}"
+echo ""
+echo -e "${YELLOW}Press Ctrl+C to stop the development server${NC}"
+echo ""
+
+# Start the development server
+dotnet run --project NexusHomeLink.AppHost
+EOF
+
+chmod +x start-with-links.sh
+
+echo "💡 Tip: Use './start-with-links.sh' for clickable links in VS Code terminal"
+echo ""

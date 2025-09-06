@@ -54,11 +54,14 @@ echo ""
 # Check if development server is already running
 if pgrep -f "dotnet run" > /dev/null; then
     echo "⚠️  Development server appears to be running already"
-    echo "   • Check http://localhost:3000 for frontend"
-    echo "   • Check http://localhost:5000 for API"
-    echo "   • Check https://localhost:7443 for Aspire Dashboard"
+    echo ""
+    echo "🔗 Clickable links (VS Code terminal):"
+    echo "   Frontend:     http://localhost:3000"
+    echo "   API:          http://localhost:5000"
+    echo "   Aspire:       https://localhost:7443"
 else
     echo "💡 To start development, run: ./dev.sh start"
+    echo "   Or use: ./start-with-links.sh for clickable links"
 fi
 
 echo ""

@@ -100,6 +100,17 @@ docker-compose -f .devcontainer/docker-compose.yml exec devcontainer bash
 - **PostgreSQL**: localhost:5432 (if enabled)
 - **Redis**: localhost:6379 (if enabled)
 
+### 🔗 Clickable Links in VS Code Terminal
+When you start the development environment, you'll see clickable links in the VS Code terminal:
+```
+🔗 Clickable links (VS Code terminal):
+   Frontend:     http://localhost:3000
+   API:          http://localhost:5000
+   Aspire:       https://localhost:7443
+```
+
+Simply click on any URL to open it in your browser! This works in VS Code's integrated terminal.
+
 ## 🔧 Configuration
 
 ### Environment Variables

@@ -9,13 +9,22 @@ if [ ! -f "package.json" ] && [ ! -f "NexusHomeLink.sln" ]; then
     exit 1
 fi
 
+# Colors for output
+GREEN='\033[0;32m'
+CYAN='\033[0;36m'
+YELLOW='\033[1;33m'
+BLUE='\033[0;34m'
+NC='\033[0m' # No Color
+
 # Start the development environment
-echo "🔧 Starting .NET Aspire development environment..."
-echo "   • Frontend will be available at: http://localhost:3000"
-echo "   • API will be available at: http://localhost:5000"
-echo "   • Aspire Dashboard will be available at: https://localhost:7443"
+echo -e "${GREEN}🔧 Starting .NET Aspire development environment...${NC}"
 echo ""
-echo "Press Ctrl+C to stop the development server"
+echo -e "${BLUE}🔗 Clickable links (VS Code terminal):${NC}"
+echo -e "   Frontend:     ${CYAN}http://localhost:3000${NC}"
+echo -e "   API:          ${CYAN}http://localhost:5000${NC}"
+echo -e "   Aspire:       ${CYAN}https://localhost:7443${NC}"
+echo ""
+echo -e "${YELLOW}Press Ctrl+C to stop the development server${NC}"
 echo ""
 
 # Start with .NET Aspire

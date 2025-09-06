@@ -28,9 +28,11 @@ function Show-Help {
 
 function Start-Development {
     Write-Host "🚀 Starting Nexus Home Link with .NET Aspire..." -ForegroundColor Green
-    Write-Host "   • Frontend: http://localhost:3000" -ForegroundColor Cyan
-    Write-Host "   • API: http://localhost:5000" -ForegroundColor Cyan
-    Write-Host "   • Aspire Dashboard: https://localhost:7443" -ForegroundColor Cyan
+    Write-Host ""
+    Write-Host "🔗 Clickable links (VS Code terminal):" -ForegroundColor Blue
+    Write-Host "   Frontend:     http://localhost:3000" -ForegroundColor Cyan
+    Write-Host "   API:          http://localhost:5000" -ForegroundColor Cyan
+    Write-Host "   Aspire:       https://localhost:7443" -ForegroundColor Cyan
     Write-Host ""
     Write-Host "Press Ctrl+C to stop the development server" -ForegroundColor Yellow
     Write-Host ""
